@@ -1,0 +1,4 @@
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\MakingProjects\obj\Debug\netcoreapp3.1\ProjectCreation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\MakingProjects\obj\Debug\netcoreapp3.1\ProjectCreation.AssemblyInfoInputs.cache
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\MakingProjects\obj\Debug\netcoreapp3.1\ProjectCreation.AssemblyInfo.cs
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\MakingProjects\obj\Debug\netcoreapp3.1\ProjectCreation.csproj.CoreCompileInputs.cache

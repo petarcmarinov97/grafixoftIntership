@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wMSBrZKmDmeE3JJzFuiV5n1UUS79LNaTGJ1NFbAFN/n5M2HNN7ndDufYVMaLPlnkZpBe8Xnac5FL1RzvaY20qQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\petar.marinov\\Desktop\\Repos\\grafixoftIntership\\dataTypes\\GreetingByName\\GreetingByName.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\petar.marinov\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.21\\microsoft.netcore.app.host.win-x64.3.1.21.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FyxXkAQsIlDhHjNngzyHrcXpigWkmcmjiuwmfRbunYv5W99buqC1FldfbAfcU5rmYjkNw3IDAQnTNY2C5hCTEw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\petar.marinov\\Desktop\\Repos\\grafixoftIntership\\dataTypes\\HelloSoftUni\\HelloSoftUni.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\petar.marinov\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.21\\microsoft.netcore.app.host.win-x64.3.1.21.nupkg.sha512"
+  ],
+  "logs": []
+}

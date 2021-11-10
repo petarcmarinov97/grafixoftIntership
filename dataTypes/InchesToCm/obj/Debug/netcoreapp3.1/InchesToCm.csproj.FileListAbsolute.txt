@@ -1,0 +1,13 @@
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\bin\Debug\netcoreapp3.1\InchesToCm.exe
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\bin\Debug\netcoreapp3.1\InchesToCm.deps.json
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\bin\Debug\netcoreapp3.1\InchesToCm.runtimeconfig.json
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\bin\Debug\netcoreapp3.1\InchesToCm.runtimeconfig.dev.json
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\bin\Debug\netcoreapp3.1\InchesToCm.dll
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\bin\Debug\netcoreapp3.1\InchesToCm.pdb
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\obj\Debug\netcoreapp3.1\InchesToCm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\obj\Debug\netcoreapp3.1\InchesToCm.AssemblyInfoInputs.cache
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\obj\Debug\netcoreapp3.1\InchesToCm.AssemblyInfo.cs
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\obj\Debug\netcoreapp3.1\InchesToCm.csproj.CoreCompileInputs.cache
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\obj\Debug\netcoreapp3.1\InchesToCm.dll
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\obj\Debug\netcoreapp3.1\InchesToCm.pdb
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\InchesToCm\obj\Debug\netcoreapp3.1\InchesToCm.genruntimeconfig.cache

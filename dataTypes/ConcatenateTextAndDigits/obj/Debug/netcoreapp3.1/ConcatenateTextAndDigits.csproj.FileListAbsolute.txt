@@ -1,0 +1,13 @@
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\bin\Debug\netcoreapp3.1\ConcatenateTextAndDigits.exe
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\bin\Debug\netcoreapp3.1\ConcatenateTextAndDigits.deps.json
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\bin\Debug\netcoreapp3.1\ConcatenateTextAndDigits.runtimeconfig.json
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\bin\Debug\netcoreapp3.1\ConcatenateTextAndDigits.runtimeconfig.dev.json
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\bin\Debug\netcoreapp3.1\ConcatenateTextAndDigits.dll
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\bin\Debug\netcoreapp3.1\ConcatenateTextAndDigits.pdb
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\obj\Debug\netcoreapp3.1\ConcatenateTextAndDigits.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\obj\Debug\netcoreapp3.1\ConcatenateTextAndDigits.AssemblyInfoInputs.cache
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\obj\Debug\netcoreapp3.1\ConcatenateTextAndDigits.AssemblyInfo.cs
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\obj\Debug\netcoreapp3.1\ConcatenateTextAndDigits.csproj.CoreCompileInputs.cache
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\obj\Debug\netcoreapp3.1\ConcatenateTextAndDigits.dll
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\obj\Debug\netcoreapp3.1\ConcatenateTextAndDigits.pdb
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\ConcatenateTextAndDigits\obj\Debug\netcoreapp3.1\ConcatenateTextAndDigits.genruntimeconfig.cache

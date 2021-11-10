@@ -1,0 +1,13 @@
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\bin\Debug\netcoreapp3.1\GreetingByName.exe
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\bin\Debug\netcoreapp3.1\GreetingByName.deps.json
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\bin\Debug\netcoreapp3.1\GreetingByName.runtimeconfig.json
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\bin\Debug\netcoreapp3.1\GreetingByName.runtimeconfig.dev.json
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\bin\Debug\netcoreapp3.1\GreetingByName.dll
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\bin\Debug\netcoreapp3.1\GreetingByName.pdb
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\obj\Debug\netcoreapp3.1\GreetingByName.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\obj\Debug\netcoreapp3.1\GreetingByName.AssemblyInfoInputs.cache
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\obj\Debug\netcoreapp3.1\GreetingByName.AssemblyInfo.cs
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\obj\Debug\netcoreapp3.1\GreetingByName.csproj.CoreCompileInputs.cache
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\obj\Debug\netcoreapp3.1\GreetingByName.dll
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\obj\Debug\netcoreapp3.1\GreetingByName.pdb
+C:\Users\petar.marinov\Desktop\Repos\grafixoftIntership\dataTypes\GreetingByName\obj\Debug\netcoreapp3.1\GreetingByName.genruntimeconfig.cache
