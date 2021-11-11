@@ -23,7 +23,6 @@ namespace LunchBreak
             {
                 Console.WriteLine($"You don't have enough time to watch {title}, you need {Math.Ceiling(episode - time)} more minutes.");
             }
-
         }
     }
 }
