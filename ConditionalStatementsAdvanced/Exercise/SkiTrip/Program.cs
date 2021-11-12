@@ -12,6 +12,7 @@ namespace ConsoleApp6
             double price = 0.0;
             double totalPrice = 0.0;
             double totalPrice2 = 0.0;
+            double percent = 0.0;
 
             if (roomType == "room for one person")
             {
@@ -36,40 +37,36 @@ namespace ConsoleApp6
                 price = 25.00;
                 if (rating == "positive")
                 {
-                    if (days < 10)
+                    percent = 0.3;
+
+                    if (days >= 10 && days <= 15)
                     {
-                        totalPrice2 = (days - 1) * price; totalPrice = totalPrice2 - totalPrice2 * 0.30;
-                        Console.WriteLine("{0:F2}", (totalPrice + totalPrice * 0.25));
-                    }
-                    else if (days >= 10 && days <= 15)
-                    {
-                        totalPrice2 = (days - 1) * price; totalPrice = totalPrice2 - totalPrice2 * 0.35;
-                        Console.WriteLine("{0:F2}", (totalPrice + totalPrice * 0.25));
+                        percent = 0.35;
                     }
                     else if (days > 15)
                     {
-                        totalPrice2 = (days - 1) * price; totalPrice = totalPrice2 - totalPrice2 * 0.50;
-                        Console.WriteLine("{0:F2}", (totalPrice + totalPrice * 0.25));
+                        percent = 0.5;
                     }
+
+                    totalPrice2 = (days - 1) * price;
+                    totalPrice = totalPrice2 - totalPrice2 * percent;
+                    Console.WriteLine("{0:F2}", (totalPrice + totalPrice * 0.25));
                 }
                 else if (rating == "negative")
                 {
-
-                    if (days < 10)
+                    percent = 0.3;
+                    
+                    if (days >= 10 && days <= 15)
                     {
-                        totalPrice2 = (days - 1) * price; totalPrice = totalPrice2 - totalPrice2 * 0.30;
-                        Console.WriteLine("{0:F2}", (totalPrice - totalPrice * 0.10));
-                    }
-                    else if (days >= 10 && days <= 15)
-                    {
-                        totalPrice2 = (days - 1) * price; totalPrice = totalPrice2 - totalPrice2 * 0.35;
-                        Console.WriteLine("{0:F2}", (totalPrice - totalPrice * 0.10));
+                        percent = 0.35;
                     }
                     else if (days > 15)
                     {
-                        totalPrice2 = (days - 1) * price; totalPrice = totalPrice2 - totalPrice2 * 0.50;
-                        Console.WriteLine("{0:F2}", (totalPrice - totalPrice * 0.10));
+                        percent = 0.5;
                     }
+
+                    totalPrice2 = (days - 1) * price; totalPrice = totalPrice2 - totalPrice2 * percent;
+                    Console.WriteLine("{0:F2}", (totalPrice - totalPrice * 0.10));
                 }
 
             }
