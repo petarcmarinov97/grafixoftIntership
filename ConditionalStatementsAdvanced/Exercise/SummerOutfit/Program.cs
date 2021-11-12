@@ -8,48 +8,45 @@ namespace SummerOutfit
         {
             double temperature = double.Parse(Console.ReadLine());
             string timeOfDay = Console.ReadLine();
-            string shoes = string.Empty;
-            string outfit = string.Empty;
+            string shoes = "";
+            string outfit = "";
 
-            if (timeOfDay == "Morning")
+            if (temperature >= 10 && temperature <= 18)
             {
-                if (temperature >= 10 && temperature <= 18)
+                outfit = "Shirt";
+                shoes = "Moccasins";
+
+                if(timeOfDay == "Morning")
                 {
                     outfit = "Sweatshirt";
                     shoes = "Sneakers";
                 }
-                else if (temperature > 18 && temperature <= 24)
-                {
-                    outfit = "Shirt";
-                    shoes = "Moccasins";
-                }
-                else if (temperature >= 25)
+
+            }
+            else if (temperature > 18 && temperature <= 24)
+            {
+                outfit = "Shirt";
+                shoes = "Moccasins";
+
+                if(timeOfDay == "Afternoon")
                 {
                     outfit = "T-Shirt";
                     shoes = "Sandals";
                 }
             }
-            if (timeOfDay == "Afternoon")
+            else if(temperature > 24)
             {
-                if (temperature >= 10 && temperature <= 18)
-                {
-                    outfit = "Shirt";
-                    shoes = "Moccasins";
-                }
-                else if (temperature > 18 && temperature <= 24)
+                if(timeOfDay == "Morning")
                 {
                     outfit = "T-Shirt";
                     shoes = "Sandals";
                 }
-                else if (temperature >= 25)
+                else if(timeOfDay == "Afternoon")
                 {
                     outfit = "Swim Suit";
                     shoes = "Barefoot";
                 }
-            }
-            if (timeOfDay == "Evening")
-            {
-                if (temperature >= 10)
+                else if(timeOfDay == "Evening")
                 {
                     outfit = "Shirt";
                     shoes = "Moccasins";

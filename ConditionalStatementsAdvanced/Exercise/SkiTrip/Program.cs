@@ -15,20 +15,17 @@ namespace ConsoleApp6
             double totalPriceSecond = 0.0;
             double finalPrice = 0.0;
             double percent = 0.0;
+            double possitive = 0.25;
+            double negative = 0.1;
 
             if (roomType == "room for one person")
             {
                 price = 18.00;
                 totalPriceSecond = nights * price;
-                if (rating == "positive")
-                {
-                    totalPrice = totalPriceSecond + totalPriceSecond * 0.25;
-                }
-                else if (rating == "negative")
-                {
-                    totalPrice = totalPriceSecond - totalPriceSecond * 0.10;
-                }
+
+                totalPrice = rating == "positive" ? totalPriceSecond + totalPriceSecond * possitive : totalPrice = totalPriceSecond - totalPriceSecond * negative;
                 Console.WriteLine("{0:F2}", totalPrice);
+
             }
             else if (roomType == "apartment")
             {
@@ -44,18 +41,9 @@ namespace ConsoleApp6
                 {
                     percent = 0.5;
                 }
+                totalPrice = totalPriceSecond - totalPriceSecond * percent;
 
-                if (rating == "positive")
-                {
-                    totalPrice = totalPriceSecond - totalPriceSecond * percent;
-                    finalPrice = totalPrice + totalPrice * 0.25;
-                }
-                else if (rating == "negative")
-                {
-                    
-                    totalPrice = totalPriceSecond - totalPriceSecond * percent;
-                    finalPrice = totalPrice - totalPrice * 0.10;
-                }
+                finalPrice = rating == "positive" ? totalPrice + totalPrice * possitive : totalPrice - totalPrice * negative;
                 Console.WriteLine("{0:F2}", finalPrice);
             }
 
@@ -73,17 +61,9 @@ namespace ConsoleApp6
                 {
                     percent = 0.20;
                 }
+                totalPrice = totalPriceSecond - totalPriceSecond * percent;
 
-                if (rating == "positive")
-                {
-                    totalPrice = totalPriceSecond - totalPriceSecond * percent;
-                    finalPrice = totalPrice + totalPrice * 0.25;
-                }
-                else if (rating == "negative")
-                {
-                    totalPrice = totalPriceSecond - totalPriceSecond * percent;
-                    finalPrice = totalPrice - totalPrice * 0.10;
-                }
+                finalPrice = rating == "positive" ? totalPrice + totalPrice * possitive : totalPrice - totalPrice * negative;
                 Console.WriteLine("{0:F2}", finalPrice);
             }
         }
