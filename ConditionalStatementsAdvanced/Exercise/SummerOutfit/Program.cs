@@ -8,8 +8,8 @@ namespace SummerOutfit
         {
             double temperature = double.Parse(Console.ReadLine());
             string timeOfDay = Console.ReadLine();
-            string shoes = "";
-            string outfit = "";
+            string shoes = "Shirt";
+            string outfit = "Moccasins";
 
             if (temperature >= 10 && temperature <= 18)
             {

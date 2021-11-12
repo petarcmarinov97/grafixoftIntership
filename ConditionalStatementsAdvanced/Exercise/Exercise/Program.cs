@@ -15,15 +15,9 @@ namespace Exercise
             {
                 price = 12.00;
             }
-
-            else if (type == "Normal")
+            else
             {
-                price = 7.50;
-            }
-
-            else if (type == "Discount")
-            {
-                price = 5.00;
+                price = type == "Normal" ? 7.50 : 5.00;
             }
 
             Console.WriteLine("{0:F2} leva", price * r * c);
