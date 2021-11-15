@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RectangleOfNxNStars", "draw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriangleOfDolars", "TriangleOfDolars\TriangleOfDolars.csproj", "{A8A76157-1DB1-4D2E-80C9-5B13B72D3FB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareFrame", "SquareFrame\SquareFrame.csproj", "{CE97FF11-361F-4D85-A597-FCC44E951B6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquareFrame", "SquareFrame\SquareFrame.csproj", "{CE97FF11-361F-4D85-A597-FCC44E951B6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunglasses", "Sunglasses\Sunglasses.csproj", "{02180BB2-A48B-48B8-9064-6AAD92481271}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sunglasses", "Sunglasses\Sunglasses.csproj", "{02180BB2-A48B-48B8-9064-6AAD92481271}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "House", "House\House.csproj", "{02FAEA83-5543-4BB1-B95F-079FF7D2252F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "House", "House\House.csproj", "{02FAEA83-5543-4BB1-B95F-079FF7D2252F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axe", "Axe\Axe.csproj", "{61DB1F9C-980F-4B10-90F5-559470C5162C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{02FAEA83-5543-4BB1-B95F-079FF7D2252F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02FAEA83-5543-4BB1-B95F-079FF7D2252F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02FAEA83-5543-4BB1-B95F-079FF7D2252F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61DB1F9C-980F-4B10-90F5-559470C5162C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61DB1F9C-980F-4B10-90F5-559470C5162C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61DB1F9C-980F-4B10-90F5-559470C5162C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61DB1F9C-980F-4B10-90F5-559470C5162C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
