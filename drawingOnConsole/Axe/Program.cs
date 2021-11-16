@@ -32,7 +32,7 @@ namespace Axe
             {
                 Console.WriteLine(new string('*', dashes + 1) + new string('-', handleRow - 2) + "*" + new string('-', handleRow - 2));
             }
-            q
+            
             //After Handle Lines and Before the Last Line
             for (int i = 0; i < n / 2 - 1; i++)
             {
