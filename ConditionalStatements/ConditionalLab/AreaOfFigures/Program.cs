@@ -14,7 +14,7 @@ namespace AreaOfFigures
               double length = double.Parse(Console.ReadLine());
                 result=length * length;
              }
-            else if (type == "rectangle")
+            else if(type == "rectangle")
             {
                 double a = double.Parse(Console.ReadLine());
                 double b = double.Parse(Console.ReadLine());
@@ -23,7 +23,7 @@ namespace AreaOfFigures
             else if (type == "circle")
             {
                 double radius = double.Parse(Console.ReadLine());
-                result = Math.PI*radius*radius; 
+                result = Math.PI*radius*radius;
             }
             else if(type == "triangle")
             {
