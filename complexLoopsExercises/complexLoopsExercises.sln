@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StupidPasswordGenerator", "complexLoopsExercises\StupidPasswordGenerator.csproj", "{86CB6A7E-3449-4120-BCE4-E26AB6651147}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86CB6A7E-3449-4120-BCE4-E26AB6651147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CB6A7E-3449-4120-BCE4-E26AB6651147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CB6A7E-3449-4120-BCE4-E26AB6651147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CB6A7E-3449-4120-BCE4-E26AB6651147}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0DC7527-7C5D-4BD2-9000-70494C2775FE}
+	EndGlobalSection
+EndGlobal
