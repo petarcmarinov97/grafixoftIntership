@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 
 namespace ZigZagArrays
 {
@@ -12,8 +13,8 @@ namespace ZigZagArrays
             int[] arr1 = new int[n];
             int[] arr2 = new int[n];
 
-            string string1 = "";
-            string string2 = "";
+            StringBuilder string1 = new StringBuilder("");
+            StringBuilder string2 = new StringBuilder("");
 
             for (int i = 0; i < n; i++)
             {
@@ -21,18 +22,17 @@ namespace ZigZagArrays
                 int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
                 if (i % 2 == 1)
                 {
-                    string2 += input[0].ToString() + " ";
-                    string1 += input[1].ToString() + " ";
+                    string2.Append(input[0].ToString() + " ");
+                    string1.Append(input[1].ToString() + " ");
                 }
                 else
                 {
-                    string2 += input[1].ToString() + " ";
-                    string1 += input[0].ToString() + " ";
+                    string2.Append(input[1].ToString() + " ");
+                    string1.Append(input[0].ToString() + " ");
                 }
             }
 
-            Console.WriteLine(string1);
-            Console.WriteLine(string2);
+            Console.Write(string1 + "\n" + string2);
         }
     }
 }
