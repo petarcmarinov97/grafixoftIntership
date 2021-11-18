@@ -11,13 +11,13 @@ namespace KaminoFactoryStar
             int sequenceLength = int.Parse(Console.ReadLine());
             string input = Console.ReadLine();
 
+            //The final dna array that should be printed
             int[] dna = new int[sequenceLength];
             int length = 0;
             int index = 0;
             int sum = 0;
             int row = 0;
             int currentRow = 0;
-
 
             while (input != "Clone them!")
             {
@@ -28,12 +28,12 @@ namespace KaminoFactoryStar
                 //Calculating the sum of the numbers per line
                 int currentSum = currentDna.Sum();
 
-
                 int currentLength = 0;
                 int currentIndex = 0;
 
                 for (int i = 0; i < currentDna.Length; i++)
                 {
+
                     if (currentDna[i] == 1)
                     {
                         //Increasing the 1 subsequence length
