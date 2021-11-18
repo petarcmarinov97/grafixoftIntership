@@ -13,13 +13,10 @@ namespace Train
             for(int i = 0; i < input.Length; i++)
             {
                 input[i] = int.Parse(Console.ReadLine());
-            }
-
-            for (int i = 0; i < input.Length; i++)
-            {
                 Console.Write(input[i] + " ");
                 sum += input[i];
             }
+
             Console.Write("\n");
             Console.WriteLine(sum);
         }
