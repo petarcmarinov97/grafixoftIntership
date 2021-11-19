@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListManipulationBasics", "ListManipulationBasics\ListManipulationBasics.csproj", "{CBA344D4-505D-4BE7-B3D6-20D76A427EB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBA344D4-505D-4BE7-B3D6-20D76A427EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA344D4-505D-4BE7-B3D6-20D76A427EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA344D4-505D-4BE7-B3D6-20D76A427EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA344D4-505D-4BE7-B3D6-20D76A427EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC8C2A65-C418-4A3E-BB16-BE7DE1F39BAC}
+	EndGlobalSection
+EndGlobal
