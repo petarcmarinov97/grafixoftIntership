@@ -18,7 +18,6 @@ namespace ZigZagArrays
 
             for (int i = 0; i < n; i++)
             {
-                //Reading the line of two values and spliting them by ' '
                 int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
                 if (i % 2 == 1)
                 {

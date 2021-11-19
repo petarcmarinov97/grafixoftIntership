@@ -7,11 +7,10 @@ namespace KaminoFactoryStar
     {
         static void Main(string[] args)
         {
-            //Variables
+
             int sequenceLength = int.Parse(Console.ReadLine());
             string input = Console.ReadLine();
 
-            //The final dna array that should be printed
             int[] dna = new int[sequenceLength];
             int length = 0;
             int index = 0;
@@ -21,11 +20,10 @@ namespace KaminoFactoryStar
 
             while (input != "Clone them!")
             {
-                //Spliting the string by "!" and remove the empty spaces
+
                 int[] currentDna = input.Split('!', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
                 currentRow++;
 
-                //Calculating the sum of the numbers per line
                 int currentSum = currentDna.Sum();
 
                 int currentLength = 0;
@@ -33,10 +31,8 @@ namespace KaminoFactoryStar
 
                 for (int i = 0; i < currentDna.Length; i++)
                 {
-
                     if (currentDna[i] == 1)
                     {
-                        //Increasing the 1 subsequence length
                         currentLength++;
 
                         if (currentLength == 1)
@@ -50,7 +46,6 @@ namespace KaminoFactoryStar
                             index = currentIndex;
                             row = currentRow;
 
-                            //Saving the current array into the dna array
                             dna = currentDna;
                             sum = currentSum;
                         }
