@@ -16,11 +16,12 @@ namespace VowelsSUm
 
             for (int b = 0; b < word.Length; b++)
             {
-                
-                if(word[b] ==  'a')
+
+                if (word[b] == 'a')
                 {
                     sum += a;
-                }else if(word[b] == 'e')
+                }
+                else if (word[b] == 'e')
                 {
                     sum += e;
                 }
@@ -37,6 +38,7 @@ namespace VowelsSUm
                     sum += u;
                 }
             }
+
             Console.WriteLine(sum);
         }
     }

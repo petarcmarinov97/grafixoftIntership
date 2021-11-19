@@ -8,11 +8,13 @@ namespace SumNumbers
         {
             int numberCount = int.Parse(Console.ReadLine());
             int sum = 0;
-            for(int i =0; i<numberCount; i++)
+
+            for (int i = 0; i < numberCount; i++)
             {
                 int number = int.Parse(Console.ReadLine());
                 sum += number;
             }
+
             Console.WriteLine(sum);
         }
     }

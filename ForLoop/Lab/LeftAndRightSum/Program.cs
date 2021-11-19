@@ -16,6 +16,7 @@ namespace ConsoleApplication7
                 int numberOne = int.Parse(Console.ReadLine());
                 left += numberOne;
             }
+
             for (int i = 0; i < n; i++)
             {
                 int numberSecond = int.Parse(Console.ReadLine());

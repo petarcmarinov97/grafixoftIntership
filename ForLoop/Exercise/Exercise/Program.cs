@@ -9,16 +9,17 @@ namespace Exercise
             string name = Console.ReadLine();
             double academyPoints = double.Parse(Console.ReadLine());
             int evaluators = int.Parse(Console.ReadLine());
-            Boolean isNominated = false;
+            double points = 1250.5;
+            bool isNominated = false;
 
-            for (int i = 0; i<evaluators; i++)
+            for (int i = 0; i < evaluators; i++)
             {
                 string evaluatorName = Console.ReadLine();
                 double evaluatorPoints = double.Parse(Console.ReadLine());
                 double calculatedPoints = evaluatorName.Length * evaluatorPoints / 2;
                 academyPoints += calculatedPoints;
 
-                if (academyPoints >= 1250.5)
+                if (academyPoints >= points)
                 {
                     Console.WriteLine($"Congratulations, {name} got a nominee for leading role with {academyPoints:F1}!");
                     isNominated = true;
@@ -26,9 +27,9 @@ namespace Exercise
                 }
             }
 
-            if(!isNominated)
+            if (!isNominated)
             {
-                Console.WriteLine($"Sorry, {name} you need {Math.Abs(academyPoints - 1250.5):F1} more!");
+                Console.WriteLine($"Sorry, {name} you need {Math.Abs(academyPoints - points):F1} more!");
             }
         }
     }

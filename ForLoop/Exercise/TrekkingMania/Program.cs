@@ -7,12 +7,12 @@ namespace TrekkingMania
         static void Main(string[] args)
         {
             int groupCount = int.Parse(Console.ReadLine());
-            double sumOfGroups = 0;
-            double musalaClimbers = 0.0;
-            double monblanClimbers = 0.0;
-            double kilimandjaroClimbers = 0.0;
-            double kSecondClimbers = 0.0;
-            double everestClimbers = 0.0;
+            int sumOfGroups = 0;
+            int musalaClimbers = 0;
+            int monblanClimbers = 0;
+            int kilimandjaroClimbers = 0;
+            int kSecondClimbers = 0;
+            int everestClimbers = 0;
 
             for (int i = 0; i < groupCount; i++)
             {
@@ -34,17 +34,18 @@ namespace TrekkingMania
                 {
                     kSecondClimbers += climbers;
                 }
-                else if(climbers > 40)
+                else if (climbers > 40)
                 {
                     everestClimbers += climbers;
                 }
                 sumOfGroups += climbers;
             }
-                Console.WriteLine($"{(musalaClimbers / sumOfGroups * 100):F2}%");
-                Console.WriteLine($"{(monblanClimbers / sumOfGroups * 100):F2}%");
-                Console.WriteLine($"{(kilimandjaroClimbers / sumOfGroups * 100):F2}%");
-                Console.WriteLine($"{(kSecondClimbers / sumOfGroups * 100):F2}%");
-                Console.WriteLine($"{(everestClimbers / sumOfGroups * 100):F2}%");
+
+            Console.WriteLine($"{(1.00*musalaClimbers / sumOfGroups * 100):F2}%");
+            Console.WriteLine($"{(1.00 * monblanClimbers / sumOfGroups * 100):F2}%");
+            Console.WriteLine($"{(1.00 * kilimandjaroClimbers / sumOfGroups * 100):F2}%");
+            Console.WriteLine($"{(1.00 * kSecondClimbers / sumOfGroups * 100):F2}%");
+            Console.WriteLine($"{(1.00 * everestClimbers / sumOfGroups * 100):F2}%");
         }
     }
 }

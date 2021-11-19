@@ -15,14 +15,8 @@ namespace Temp
             {
                 int number = int.Parse(Console.ReadLine());
 
-                if (i % 2 == 0)
-                {
-                    evenSum += number;
-                }
-                else if (i % 2 == 1)
-                {
-                    oddSum += number;
-                }
+                evenSum = i % 2 == 0 ? evenSum + number : evenSum;
+                oddSum = i % 2 == 1 ? oddSum + number : oddSum;
             }
 
             if (evenSum == oddSum)
@@ -30,7 +24,7 @@ namespace Temp
                 Console.WriteLine("Yes");
                 Console.WriteLine($"Sum = {evenSum}");
             }
-            else if (evenSum != oddSum)
+            else
             {
                 int finsum = Math.Abs(oddSum - evenSum);
                 Console.WriteLine("No");

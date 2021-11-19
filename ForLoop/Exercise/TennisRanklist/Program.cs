@@ -38,6 +38,7 @@ namespace _05.Tennis_Ranklist
                     points += 720;
                 }
             }
+
             average = (points - pointsAtStart) / numberOfTournaments;
             percent = (wonTournaments / numberOfTournaments) * 100;
 
