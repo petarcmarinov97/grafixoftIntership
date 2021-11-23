@@ -11,35 +11,29 @@ namespace TakeSkipRope
         {
             string input = Console.ReadLine();
             List<int> numbers = new List<int>();
+            List<string> nonNumbers = new List<string>();
             List<int> takeList = new List<int>();
             List<int> skipList = new List<int>();
-            List<string> nonNumbers = new List<string>();
             StringBuilder result = new StringBuilder();
 
-            for (int i = 0; i < input.Length; i++)
-            {
-                if (char.IsDigit(input[i]))
-                {
-                    numbers.Add(int.Parse(input[i].ToString()));
-                }
-                else
-                {
-                    nonNumbers.Add(input[i].ToString());
-                }
-            }
+            numbers = input.Where(x => char.IsDigit(x))
+                .Select(x => x.ToString())
+                .Select(int.Parse)
+                .ToList();
 
-            for (int i = 0; i < numbers.Count; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    takeList.Add(numbers[i]);
-                }
-                else
-                {
-                    skipList.Add(numbers[i]);
-                }
-            }
+            nonNumbers = input.Where(x => !char.IsDigit(x))
+                .Select(x => x.ToString())
+                .ToList();
 
+            takeList = numbers
+                .Where((x, index) => index % 2 == 0)
+                .ToList();
+
+            skipList = numbers
+                .Where((x, index) => index % 2 != 0)
+                .ToList();
+
+          
             int indexForSkip = 0;
             for (int i = 0; i < takeList.Count; i++)
             {
