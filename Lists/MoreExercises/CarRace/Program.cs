@@ -12,40 +12,15 @@ namespace CarRace
             double sumLeftPlayer = 0;
             double sumRightPlayer = 0;
 
-            // Left player
             for (int i = 0; i < inputList.Count / 2; i++)
             {
-                if (inputList[i] != 0)
-                {
-                    sumLeftPlayer += inputList[i];
-                }
-                else
-                {
-                    sumLeftPlayer = sumLeftPlayer * 0.8;
-                }
+                sumLeftPlayer = inputList[i] != 0 ? sumLeftPlayer + inputList[i] : sumLeftPlayer * 0.8;
+                sumRightPlayer = inputList[inputList.Count-1-i] != 0 ? sumRightPlayer + inputList[inputList.Count - 1 - i] : sumRightPlayer * 0.8;
             }
 
-            // Right player
-            for (int i = inputList.Count - 1; i > inputList.Count / 2; i--)
-            {
-                if (inputList[i] != 0)
-                {
-                    sumRightPlayer += inputList[i];
-                }
-                else
-                {
-                    sumRightPlayer = sumRightPlayer * 0.8;
-                }
-            }
-
-            if (sumLeftPlayer < sumRightPlayer)
-            {
-                Console.WriteLine($"The winner is left with total time: {sumLeftPlayer}");
-            }
-            else
-            {
-                Console.WriteLine($"The winner is right with total time: {sumRightPlayer}");
-            }
+            string name = sumLeftPlayer < sumRightPlayer ? "left" : "right";
+            double sumPlayer = sumLeftPlayer < sumRightPlayer ? sumLeftPlayer : sumRightPlayer;
+            Console.WriteLine($"The winner is {name} with total time: {sumPlayer}");
         }
     }
 }
