@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML", "HTML\HTML.csproj", "{FCE3CE06-3BB1-4233-B683-CBC0F8E305FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreasureFinder", "TreasureFinder\TreasureFinder.csproj", "{9DB25BF8-4531-4446-8228-63428CF2E57B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCE3CE06-3BB1-4233-B683-CBC0F8E305FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCE3CE06-3BB1-4233-B683-CBC0F8E305FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCE3CE06-3BB1-4233-B683-CBC0F8E305FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCE3CE06-3BB1-4233-B683-CBC0F8E305FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DB25BF8-4531-4446-8228-63428CF2E57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DB25BF8-4531-4446-8228-63428CF2E57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DB25BF8-4531-4446-8228-63428CF2E57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DB25BF8-4531-4446-8228-63428CF2E57B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7585010-170D-409E-856C-1A58452645A5}
+	EndGlobalSection
+EndGlobal
