@@ -8,20 +8,16 @@ namespace middleCharacters
         {
             string text = Console.ReadLine();
 
-            Console.WriteLine(Program.middleCharacters(text));
+            Console.WriteLine(GetMiddleCharacters(text));
         }
 
-        static string middleCharacters(string text)
+        static string GetMiddleCharacters(string text)
         {
             string result = "";
-            if (text.Length % 2 == 0)
-            {
-                result += text[text.Length/2 - 1].ToString() + text[text.Length/2].ToString();
-            }
-            else
-            {
-                result += text[text.Length / 2];
-            }
+            result = text.Length % 2 == 0 
+                ? text[text.Length / 2 - 1].ToString() + text[text.Length / 2].ToString()
+                : result += text[text.Length / 2];
+
             return result;
         }
     }

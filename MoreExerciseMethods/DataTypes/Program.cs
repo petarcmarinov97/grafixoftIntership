@@ -15,35 +15,35 @@ namespace DataTypes
             if (input == "int")
             {
                 int number = int.Parse(Console.ReadLine());
-                GetInt(number);
+                PrintInt(number);
             }
 
             if (input == "real")
             {
                 double number = double.Parse(Console.ReadLine());
-                GetReal(number);
+                PrintReal(number);
             }
 
             if (input == "string")
             {
                 string text = Console.ReadLine();
-                GetString(text);
+                PrintString(text);
             }
         }
 
-        static void GetInt(int number)
+        static void PrintInt(int number)
         {
             int output = number * 2;
             Console.WriteLine(output);
         }
 
-        static void GetReal(double number)
+        static void PrintReal(double number)
         {
             double output = number * 1.5;
             Console.WriteLine($"{output:f2}");
         }
 
-        static void GetString(string text)
+        static void PrintString(string text)
         {
             string output = "$" + text + "$";
             Console.WriteLine(output);

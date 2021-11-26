@@ -9,57 +9,49 @@ namespace PasswordValidator
         {
             string password = Console.ReadLine();
 
-            if(charactersContains(password) && onlyLettersAndDigit(password) && moreThanTwo(password))
+            if (AreCharactersContains(password) && AreOnlyLettersAndDigit(password) && AreMoreThanTwoDigits(password))
             {
                 Console.WriteLine("Password is valid");
             }
 
-            if (!charactersContains(password))
+            if (!AreCharactersContains(password))
             {
                 Console.WriteLine("Password must be between 6 and 10 characters");
             }
 
-            if (!onlyLettersAndDigit(password))
+            if (!AreOnlyLettersAndDigit(password))
             {
                 Console.WriteLine("Password must consist only of letters and digits");
             }
 
-            if (!moreThanTwo(password))
+            if (!AreMoreThanTwoDigits(password))
             {
                 Console.WriteLine("Password must have at least 2 digits");
             }
         }
 
-        static Boolean charactersContains(string pass)
+        static bool AreCharactersContains(string pass)
         {
-            if (pass.Length >= 6 && pass.Length <= 10)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return pass.Length >= 6 && pass.Length <= 10 ? true : false;
         }
 
-        static Boolean onlyLettersAndDigit(string pass)
+        static bool AreOnlyLettersAndDigit(string pass)
         {
-            Boolean isTrue = true;
+            bool isContains = true;
 
             for (int i = 0; i < pass.Length; i++)
             {
-
                 if (!(Char.IsLetterOrDigit(pass[i])))
                 {
-                    isTrue = false;
+                    isContains = false;
+                    break;
                 }
             }
-            return isTrue;
+            return isContains;
         }
-    
-        static Boolean moreThanTwo(string pass)
+
+        static bool AreMoreThanTwoDigits(string pass)
         {
-            bool isMore = false;
             int counter = 0;
             for (int i = 0; i < pass.Length; i++)
             {
@@ -68,11 +60,8 @@ namespace PasswordValidator
                     counter++;
                 }
             }
-            if (counter >= 2)
-            {
-                isMore = true;
-            }
-            return isMore;
+
+            return counter >= 2 ? true : false;
         }
     }
 }

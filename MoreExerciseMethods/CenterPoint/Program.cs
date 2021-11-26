@@ -14,23 +14,15 @@ namespace Center_Point
             double y1 = double.Parse(Console.ReadLine());
             double x2 = double.Parse(Console.ReadLine());
             double y2 = double.Parse(Console.ReadLine());
-            double distanceFirstPoint = GetClosest(x1, y1);
-            double disttanceSecondPoint = GetClosest(x2, y2);
+            double distanceFirstPoint = GetClosestDistance(x1, y1);
+            double disttanceSecondPoint = GetClosestDistance(x2, y2);
 
-            if (distanceFirstPoint < disttanceSecondPoint)
-            {
-                Console.WriteLine($"({x1}, {y1})");
-            }
-            else
-            {
-                Console.WriteLine($"({x2}, {y2})");
-            }
+            Console.WriteLine(distanceFirstPoint < disttanceSecondPoint ? $"({x1}, {y1})" : $"({x2}, {y2})");
         }
 
-        static double GetClosest(double x, double y)
+        static double GetClosestDistance(double x, double y)
         {
-            double distance = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
-            return distance;
+            return Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
         }
     }
 }

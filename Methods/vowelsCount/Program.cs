@@ -7,17 +7,16 @@ namespace vowelsCount
         static void Main(string[] args)
         {
             string word = Console.ReadLine();
-            Console.Write(Program.vowelsCount(word.ToLower()));
-
+            Console.Write(Program.GetVowelsCount(word.ToLower()));
         }
 
-        static int vowelsCount(string word)
+        static int GetVowelsCount(string word)
         {
             int vowels = 0;
 
-            for(int i=0; i<word.Length; i++)
+            for (int i = 0; i < word.Length; i++)
             {
-                if(word[i] == 'a' || word[i] == 'e' || word[i] == 'o' || word[i] == 'u' || word[i] == 'i')
+                if (word[i] == 'a' || word[i] == 'e' || word[i] == 'o' || word[i] == 'u' || word[i] == 'i')
                 {
                     vowels++;
                 }

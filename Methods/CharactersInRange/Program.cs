@@ -16,7 +16,6 @@ namespace CharactersInRange
             int asciiNumberFirst = (int)first;
             int asciiNumberSecond = (int)second;
 
-
             if (asciiNumberFirst < asciiNumberSecond)
             {
                 for (int i = asciiNumberFirst + 1; i < asciiNumberSecond; i++)

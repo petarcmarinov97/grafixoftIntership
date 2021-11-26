@@ -13,10 +13,6 @@ namespace MethodKeywords
             int vIn = 5;
             int vRef;
 
-            
-            
-            
-
             Console.WriteLine("Before -> " + vOut);
             TestOut(vOut);
             Console.WriteLine("After -> " + vOut);

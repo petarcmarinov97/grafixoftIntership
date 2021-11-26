@@ -8,14 +8,14 @@ namespace TopNumber
         {
             int input = int.Parse(Console.ReadLine());
 
-            TopNumber(input);
+            GetTopNumber(input);
         }
 
-        static void TopNumber(int number)
+        static void GetTopNumber(int number)
         {
             for (int i = 1; i <= number; i++)
             {
-                if (HasOddDigits(i) && isDivisible(i))
+                if (HasOddDigits(i) && IsDivisibleByEight(i))
                 {
                     Console.WriteLine(i);
                 }
@@ -36,23 +36,16 @@ namespace TopNumber
             return false;
 
         }
-        static bool isDivisible(int number)
+        static bool IsDivisibleByEight(int number)
         {
             int sum = 0;
-            while (number > 0)
+            int newNumber = number;
+            while (newNumber > 0)
             {
-                sum += number % 10;
-                number /= 10;
+                sum += newNumber % 10;
+                newNumber /= 10;
             }
-
-            if (sum % 8 == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return sum % 8 == 0 ? true : false;
         }
     }
 }

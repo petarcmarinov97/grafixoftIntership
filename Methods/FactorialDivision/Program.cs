@@ -14,8 +14,6 @@ namespace FactorialDivision
             double result = firstNumber / secondNumber;
 
             Console.WriteLine($"{result:f2}");
-            
-
         }
 
         static double GetFactorial(double number)

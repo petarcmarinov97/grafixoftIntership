@@ -11,14 +11,12 @@ namespace SmallestOfThreeNumbers
             int b = int.Parse(Console.ReadLine());
             int c = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(Program.smallestNumber(a, b, c));
+            Console.WriteLine(GetMin(GetMin(a, b),c));
         }
 
-        static int smallestNumber(int a, int b, int c)
+        static int GetMin(int a, int b)
         {
-            int [] numbers = new[] {a,b,c};
-            int min = numbers.Min();
-            return min;
+            return Math.Min(a, b);
         }
     }
 }

@@ -51,16 +51,16 @@ namespace demoTesting
         }
 
 
-    // Method in which out parameter is passed
-    // and this method returns the value of
-    // the passed parameter
-    public static void Sum(out int G)
-    {
-        G = 80;
-        G += G;
-    }
+        // Method in which out parameter is passed
+        // and this method returns the value of
+        // the passed parameter
+        public static void Sum(out int G)
+        {
+            G = 80;
+            G += G;
+        }
 
-    private static string ShowName(ref string name)
+        private static string ShowName(ref string name)
         {
             name = "Ivan";
             return "Your name is: " + name;

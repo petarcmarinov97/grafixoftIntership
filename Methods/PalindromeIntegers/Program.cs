@@ -15,14 +15,14 @@ namespace PalindromeIntegers
         {
             while (input != "END")
             {
-                string reversed=string.Empty;
+                string reversed = string.Empty;
 
-                for(int i = input.Length - 1; i >= 0; i--)
+                for (int i = input.Length - 1; i >= 0; i--)
                 {
                     reversed += input[i];
                 }
 
-                if(reversed == input)
+                if (reversed == input)
                 {
                     Console.WriteLine("true");
                 }
@@ -31,9 +31,8 @@ namespace PalindromeIntegers
                     Console.WriteLine("false");
                 }
 
-                input= Console.ReadLine();
+                input = Console.ReadLine();
             }
         }
-
     }
 }

@@ -9,21 +9,21 @@ namespace NxNMatrix
         {
             int n = int.Parse(Console.ReadLine());
 
-            matrix(n);
+            DoMatrix(n);
 
         }
 
-        static void matrix(int number)
+        static void DoMatrix(int number)
         {
             string numberString = number.ToString();
-              for (int row = 0; row < number; row++)
+            for (int row = 0; row < number; row++)
+            {
+                for (int col = 0; col < number; col++)
                 {
-                    for (int col = 0; col < number; col++)
-                    {
-                        Console.Write(number + " ");
-                    }
-                    Console.WriteLine();
+                    Console.Write(number + " ");
                 }
+                Console.WriteLine();
+            }
         }
     }
 }

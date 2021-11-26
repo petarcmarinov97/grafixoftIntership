@@ -16,28 +16,28 @@ namespace LongerLine
             double x4 = double.Parse(Console.ReadLine());
             double y4 = double.Parse(Console.ReadLine());
 
-            LongestLine(x1,y1,x2,y2,x3,y3,x4,y4);
+            PrintLongestLine(x1, y1, x2, y2, x3, y3, x4, y4);
 
         }
 
-        static void LongestLine(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4)
+        static void PrintLongestLine(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4)
         {
             double firstLine = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
             double secondLine = Math.Sqrt(Math.Pow(x4 - x3, 2) + Math.Pow(y4 - y3, 2));
 
-            if(firstLine > secondLine)
+            if (firstLine > secondLine)
             {
-                ClosestToZero(x1, y1, x2, y2);
+                PrintClosestToZero(x1, y1, x2, y2);
             }
             else
             {
-                ClosestToZero(x3, y3, x4, y4);
+                PrintClosestToZero(x3, y3, x4, y4);
             }
         }
 
-        static void ClosestToZero(double x1, double y1, double x2, double y2)
+        static void PrintClosestToZero(double x1, double y1, double x2, double y2)
         {
-            double first = Math.Sqrt(Math.Pow(Math.Abs(x1),2) + Math.Pow(Math.Abs(y1), 2));
+            double first = Math.Sqrt(Math.Pow(Math.Abs(x1), 2) + Math.Pow(Math.Abs(y1), 2));
             double second = Math.Sqrt(Math.Pow(Math.Abs(x2), 2) + Math.Pow(Math.Abs(y2), 2));
 
             if (first > second)
@@ -49,6 +49,6 @@ namespace LongerLine
                 Console.WriteLine($"({x1}, {y1})({x2}, {y2})");
             }
         }
-        
+
     }
 }
