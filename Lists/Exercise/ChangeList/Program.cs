@@ -14,6 +14,7 @@ namespace ChangeList
             while (command != "end")
             {
                 List<string> commandsList = command.Split(' ').ToList();
+
                 if (commandsList[0] == "Delete")
                 {
                     int currNumber = int.Parse(commandsList[1]);
@@ -21,8 +22,8 @@ namespace ChangeList
                     {
                         numbersList.Remove(currNumber);
                     }
-
                 }
+
                 if (commandsList[0] == "Insert")
                 {
                     int currNumber = int.Parse(commandsList[1]);

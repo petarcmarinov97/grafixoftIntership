@@ -40,10 +40,8 @@ namespace Train
                             list.Insert(counter, currentPeople + peopleToBeAdded);
                             break;
                         }
-                        else
-                        {
-                            counter++;
-                        }
+
+                        counter++;
                     }
                 }
 

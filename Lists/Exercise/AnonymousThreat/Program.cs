@@ -22,6 +22,7 @@ namespace AnonymousThreat
                 {
                     endIndex = list.Count - 1;
                 }
+
                 if (startIndex < 0 || startIndex >= list.Count)
                 {
                     startIndex = 0;
@@ -38,6 +39,7 @@ namespace AnonymousThreat
                     list.RemoveRange(startIndex, endIndex - startIndex + 1);
                     list.Insert(startIndex, newElement);
                 }
+
                 if (command[0] == "divide")
                 {
                     List<string> divided = new List<string>();
@@ -56,7 +58,6 @@ namespace AnonymousThreat
                         else
                         {
                             divided.Add(word.Substring(i * parts, parts));
-
                         }
                     }
 

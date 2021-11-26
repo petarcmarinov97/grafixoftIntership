@@ -18,13 +18,13 @@ namespace MixedUpLists
             int minNum = Math.Min(constrainOne, constrainTwo);
             int maxNum = Math.Max(constrainOne, constrainTwo);
 
-            for(int i = 0; i<Math.Min(firstList.Count, secondList.Count); i++)
+            for (int i = 0; i < Math.Min(firstList.Count, secondList.Count); i++)
             {
                 concatList.Add(firstList[i]);
-                concatList.Add(secondList[secondList.Count-1-i]);
+                concatList.Add(secondList[secondList.Count - 1 - i]);
             }
 
-            var OrderedList = concatList.Where(x => x > minNum && x < maxNum).ToList().OrderBy(x => x).ToList();                  
+            var оrderedList = concatList.Where(x => x > minNum && x < maxNum).ToList().OrderBy(x => x).ToList();
             Console.WriteLine(string.Join(" ", OrderedList));
         }
     }

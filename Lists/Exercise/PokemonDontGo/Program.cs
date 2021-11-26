@@ -13,64 +13,39 @@ namespace PokemonDontGo
 
             while (list.Count > 0)
             {
-            int index = int.Parse(Console.ReadLine());
+                int index = int.Parse(Console.ReadLine());
+                int numberToRemove = 0;
 
                 if (index < 0)
                 {
-                    int numberToRemove = list[0];
+                    numberToRemove = list[0];
                     sum += numberToRemove;
-                    list[0]=list[list.Count-1];
-
-                    for (int i = 0; i < list.Count; i++)
-                    {
-                        if (list[i] <= numberToRemove)
-                        {
-                            list[i] += numberToRemove;
-                        }
-                        else if (list[i] >= numberToRemove)
-                        {
-                            list[i] -= numberToRemove;
-                        }
-                    }
+                    list[0] = list[list.Count - 1];
                 }
                 else if (index >= list.Count)
                 {
-                    int numberToRemove = list[list.Count-1];
+                    numberToRemove = list[list.Count - 1];
                     sum += numberToRemove;
                     list[list.Count - 1] = list[0];
-
-                    for (int i = 0; i < list.Count; i++)
-                    {
-                        if (list[i] <= numberToRemove)
-                        {
-                            list[i] += numberToRemove;
-                        }
-                        else if (list[i] >= numberToRemove)
-                        {
-                            list[i] -= numberToRemove;
-                        }
-                    }
                 }
                 else
                 {
-                    int numberToRemove = list[index];
+                    numberToRemove = list[index];
                     sum += numberToRemove;
                     list.RemoveAt(index);
+                }
 
-                    for (int i = 0; i < list.Count; i++)
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (list[i] <= numberToRemove)
                     {
-                        if (list[i] <= numberToRemove)
-                        {
-                            list[i] += numberToRemove;
-                        }
-                        else if (list[i] >= numberToRemove)
-                        {
-                            list[i] -= numberToRemove;
-                        }
+                        list[i] += numberToRemove;
+                    }
+                    else if (list[i] >= numberToRemove)
+                    {
+                        list[i] -= numberToRemove;
                     }
                 }
-                
-
             }
 
             Console.WriteLine(sum);

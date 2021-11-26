@@ -13,22 +13,25 @@ namespace HouseParty
 
             for (int i = 0; i < numberOfCommands; i++)
             {
-                List<string> currCommand = Console.ReadLine().Split(' ').ToList();
-                string currName = currCommand[0];
+                List<string> currCommands = Console.ReadLine().Split(' ').ToList();
+                string currName = currCommands[0];
 
-                if (outputList.Contains(currName) && currCommand[2] != "not")
+                if (outputList.Contains(currName) && currCommands[2] != "not")
                 {
                     Console.WriteLine(currName + " is already in the list!");
                 }
-                if (currCommand[2] != "not" && !outputList.Contains(currName))
+
+                if (currCommands[2] != "not" && !outputList.Contains(currName))
                 {
                     outputList.Add(currName);
                 }
-                if (currCommand[2] == "not" && !outputList.Contains(currName))
+
+                if (currCommands[2] == "not" && !outputList.Contains(currName))
                 {
                     Console.WriteLine(currName + " is not in the list!");
                 }
-                if (outputList.Contains(currName) && currCommand[2] == "not")
+
+                if (outputList.Contains(currName) && currCommands[2] == "not")
                 {
                     while (outputList.Contains(currName))
                     {

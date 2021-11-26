@@ -13,13 +13,12 @@ namespace RemoveNegativesAndReverse
                 .Select(int.Parse)
                 .ToList();
 
-            RemovesAndRevers(numbers);
+            numbers.RemoveAll(n => n < 0);
+            PrintReveresedArray(numbers);
         }
 
-        static void RemovesAndRevers(List<int> numbers)
+        static void PrintReveresedArray(List<int> numbers)
         {
-            numbers.RemoveAll(n => n < 0);
-
             if (numbers.Count == 0)
             {
                 Console.WriteLine("empty");

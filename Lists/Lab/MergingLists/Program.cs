@@ -18,10 +18,10 @@ namespace MergingLists
                 .Select(int.Parse)
                 .ToList();
 
-            MergingLists(firstArr, secondArr);
+            MergLists(firstArr, secondArr);
         }
 
-        static void MergingLists(List<int> firstArr, List<int> secondArr)
+        static void MergLists(List<int> firstArr, List<int> secondArr)
         {
             int length = Math.Abs(firstArr.Count+secondArr.Count);
             List<int> finalArr = new List<int>(length);

@@ -8,48 +8,48 @@ namespace CardsGame
     {
         static void Main(string[] args)
         {
-            List<int> firstPlayer = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
-            List<int> secondPlayer = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+            List<int> firstPlayerHand = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+            List<int> secondPlayerHand = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
 
-            int SumFirst = firstPlayer.Sum();
-            int SumSecond = secondPlayer.Sum();
+            int sumFirst = firstPlayerHand.Sum();
+            int sumSecond = secondPlayerHand.Sum();
 
-            while (SumFirst > 0 && SumSecond > 0)
+            while (sumFirst > 0 && sumSecond > 0)
             {
-                if (firstPlayer[0] == secondPlayer[0])
+                if (firstPlayerHand[0] == secondPlayerHand[0])
                 {
-                    firstPlayer.RemoveAt(0);
-                    secondPlayer.RemoveAt(0);
+                    firstPlayerHand.RemoveAt(0);
+                    secondPlayerHand.RemoveAt(0);
                 }
-                else if (firstPlayer[0] > secondPlayer[0])
+                else if (firstPlayerHand[0] > secondPlayerHand[0])
                 {
-                    int firstPlayerDeck = firstPlayer[0];
-                    int secondPlayerDeck = secondPlayer[0];
-                    firstPlayer.RemoveAt(0);
-                    secondPlayer.RemoveAt(0);
-                    firstPlayer.Add(firstPlayerDeck);
-                    firstPlayer.Add(secondPlayerDeck);
+                    int firstPlayerDeck = firstPlayerHand[0];
+                    int secondPlayerDeck = secondPlayerHand[0];
+                    firstPlayerHand.RemoveAt(0);
+                    secondPlayerHand.RemoveAt(0);
+                    firstPlayerHand.Add(firstPlayerDeck);
+                    firstPlayerHand.Add(secondPlayerDeck);
                 }
                 else
                 {
-                    int secondPlayerDeck = secondPlayer[0];
-                    int firstPlayerDeck = firstPlayer[0];
-                    secondPlayer.RemoveAt(0);
-                    firstPlayer.RemoveAt(0);
-                    secondPlayer.Add(secondPlayerDeck);
-                    secondPlayer.Add(firstPlayerDeck);
+                    int secondPlayerDeck = secondPlayerHand[0];
+                    int firstPlayerDeck = firstPlayerHand[0];
+                    secondPlayerHand.RemoveAt(0);
+                    firstPlayerHand.RemoveAt(0);
+                    secondPlayerHand.Add(secondPlayerDeck);
+                    secondPlayerHand.Add(firstPlayerDeck);
                 }
-                SumFirst = firstPlayer.Sum();
-                SumSecond = secondPlayer.Sum();
+                sumFirst = firstPlayerHand.Sum();
+                sumSecond = secondPlayerHand.Sum();
             }
 
-            if (SumFirst < SumSecond)
+            if (sumFirst < sumSecond)
             {
-                Console.WriteLine($"Second player wins! Sum: {SumSecond}");
+                Console.WriteLine($"Second player wins! Sum: {sumSecond}");
             }
             else
             {
-                Console.WriteLine($"First player wins! Sum: {SumFirst}");
+                Console.WriteLine($"First player wins! Sum: {sumFirst}");
             }
         }
     }

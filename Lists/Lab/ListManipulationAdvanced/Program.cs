@@ -21,70 +21,69 @@ namespace ListManipulationAdvanced
 
             while (command[0] != "end")
             {
-                if (command[0] == "Add")
+                switch (command[0])
                 {
-                    list.Add(int.Parse(command[1]));
-                    isChanged = true;
-                }
-                if (command[0] == "Remove")
-                {
-                    list.Remove(int.Parse(command[1]));
-                    isChanged = true;
+                    case "Add":
+                        list.Add(int.Parse(command[1]));
+                        isChanged = true;
+                        break;
 
-                }
-                if (command[0] == "RemoveAt")
-                {
-                    list.RemoveAt(int.Parse(command[1]));
-                    isChanged = true;
+                    case "Remove":
+                        list.Remove(int.Parse(command[1]));
+                        isChanged = true;
+                        break;
 
-                }
-                if (command[0] == "Insert")
-                {
-                    list.Insert(int.Parse(command[2]), int.Parse(command[1]));
-                    isChanged = true;
+                    case "RemoveAt":
+                        list.RemoveAt(int.Parse(command[1]));
+                        isChanged = true;
+                        break;
 
-                }
-                if (command[0] == "Contains")
-                {
-                    if (list.Contains(int.Parse(command[1])))
-                    {
-                        Console.WriteLine("Yes");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No such number");
-                    }
-                }
-                if (command[0] == "PrintOdd")
-                {
-                    Console.WriteLine(string.Join(" ", list.Where(x => x % 2 == 1).ToArray()));
-                }
-                if (command[0] == "PrintEven")
-                {
-                    Console.WriteLine(string.Join(" ", list.Where(x => x % 2 == 0).ToArray()));
-                }
-                if (command[0] == "GetSum")
-                {
-                    Console.WriteLine(list.Sum());
-                }
-                if (command[0] == "Filter")
-                {
-                    if (command[1] == "<")
-                    {
-                        Console.WriteLine(string.Join(" ", list.Where(x => x < int.Parse(command[2]))));
-                    }
-                    else if (command[1] == ">")
-                    {
-                        Console.WriteLine(string.Join(" ", list.Where(x => x > int.Parse(command[2]))));
-                    }
-                    else if (command[1] == "<=")
-                    {
-                        Console.WriteLine(string.Join(" ", list.Where(x => x <= int.Parse(command[2]))));
-                    }
-                    else if (command[1] == ">=")
-                    {
-                        Console.WriteLine(string.Join(" ", list.Where(x => x >= int.Parse(command[2]))));
-                    }
+                    case "Insert":
+                        list.Insert(int.Parse(command[2]), int.Parse(command[1]));
+                        isChanged = true;
+                        break;
+
+                    case "Contains":
+                        if (list.Contains(int.Parse(command[1])))
+                        {
+                            Console.WriteLine("Yes");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No such number");
+                        }
+                        break;
+
+                    case "PrintOdd":
+                        Console.WriteLine(string.Join(" ", list.Where(x => x % 2 == 1).ToArray()));
+                        break;
+
+                    case "PrintEven":
+                        Console.WriteLine(string.Join(" ", list.Where(x => x % 2 == 0).ToArray()));
+                        break;
+
+                    case "GetSum":
+                        Console.WriteLine(list.Sum());
+                        break;
+
+                    case "Filter":
+                        if (command[1] == "<")
+                        {
+                            Console.WriteLine(string.Join(" ", list.Where(x => x < int.Parse(command[2]))));
+                        }
+                        else if (command[1] == ">")
+                        {
+                            Console.WriteLine(string.Join(" ", list.Where(x => x > int.Parse(command[2]))));
+                        }
+                        else if (command[1] == "<=")
+                        {
+                            Console.WriteLine(string.Join(" ", list.Where(x => x <= int.Parse(command[2]))));
+                        }
+                        else if (command[1] == ">=")
+                        {
+                            Console.WriteLine(string.Join(" ", list.Where(x => x >= int.Parse(command[2]))));
+                        }
+                        break;
                 }
 
                 command = Console.ReadLine().Split(' ').ToList();

@@ -14,15 +14,19 @@ namespace ListOperations
             while (command != "End")
             {
                 List<string> commandList = command.Split(' ').ToList();
+
                 if (commandList[0] == "Add")
                 {
                     numbersList.Add(int.Parse(commandList[1]));
                 }
                 else if (commandList[0] == "Insert")
                 {
-                    if (int.Parse(commandList[2]) < numbersList.Count && int.Parse(commandList[2]) >= 0)
+                    int number = int.Parse(commandList[1]);
+                    int index = int.Parse(commandList[2]);
+
+                    if (number < numbersList.Count && index >= 0)
                     {
-                        numbersList.Insert(int.Parse(commandList[2]), int.Parse(commandList[1]));
+                        numbersList.Insert(index, number);
                     }
                     else
                     {
@@ -31,13 +35,15 @@ namespace ListOperations
                 }
                 else if (commandList[0] == "Remove")
                 {
-                    if (int.Parse(commandList[1]) >= numbersList.Count || int.Parse(commandList[1])<0)
+                    int index = int.Parse(commandList[1]);
+
+                    if (index >= numbersList.Count || index < 0)
                     {
                         Console.WriteLine("Invalid index");
                     }
                     else
                     {
-                        numbersList.RemoveAt(int.Parse(commandList[1]));
+                        numbersList.RemoveAt(index);
                     }
                 }
                 else if (commandList[0] == "Shift" && commandList[1] == "left")

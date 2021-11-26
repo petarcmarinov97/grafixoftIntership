@@ -60,7 +60,6 @@ namespace SoftUniCoursePlanning
                         list[firstTitleIndex] = secondTitle;
                         list[secondTitleIndex] = firstTitle;
 
-
                         if (firstTitleIndex + 1 < list.Count && secondTitleIndex + 1 < list.Count)
                         {
                             if (list[firstTitleIndex + 1] == $"{firstTitle}-Exercise" && list[secondTitleIndex + 1] == $"{secondTitle}-Exercise")
@@ -112,10 +111,7 @@ namespace SoftUniCoursePlanning
                                     list.RemoveAt(firstTitleIndex + 2);
                                 }
                             }
-                        }
-                        else if (secondTitleIndex + 1 < list.Count)
-                        {
-                            if (list[secondTitleIndex + 1] == $"{secondTitle}-Exercise")
+                            else if (list[secondTitleIndex + 1] == $"{secondTitle}-Exercise")
                             {
                                 list.Insert(firstTitleIndex + 1, list[secondTitleIndex + 1]);
 

@@ -16,10 +16,10 @@ namespace ListsOfProducts
                 finalArr.Add(Console.ReadLine());
             }
 
-            SortedProducts(finalArr);
+            PrintSortProducts(finalArr);
         }
 
-        static void SortedProducts(List<string> finalArr)
+        static void PrintSortProducts(List<string> finalArr)
         {
             finalArr.Sort();
 
