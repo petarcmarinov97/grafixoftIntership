@@ -9,7 +9,7 @@ namespace EqualSum
         {
             int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
 
-            Boolean flag = false;
+            bool isLeftEqualsToRight = false;
 
             for (int i = 0; i < input.Length; i++)
             {
@@ -29,11 +29,11 @@ namespace EqualSum
                 if (leftSum == rightSum)
                 {
                     Console.WriteLine(i);
-                    flag = true;
+                    isLeftEqualsToRight = true;
                 }
             }
 
-            if (flag == false)
+            if (!isLeftEqualsToRight)
             {
                 Console.WriteLine("no");
             }

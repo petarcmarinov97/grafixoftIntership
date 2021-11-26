@@ -7,7 +7,7 @@ namespace ArrayRotation
     {
         static void Main(string[] args)
         {
-            int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            int[] input = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
             int rotations = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < rotations; i++)
@@ -19,6 +19,7 @@ namespace ArrayRotation
                 {
                     input[j] = input[j + 1];
                 }
+
                 input[input.Length - 1] = first;
             }
 

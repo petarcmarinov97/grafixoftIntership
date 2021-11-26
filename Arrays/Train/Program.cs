@@ -8,7 +8,7 @@ namespace Train
         {
             int n = int.Parse(Console.ReadLine());
             int[] input = new int[n];
-            int sum = 0; ;
+            int sum = 0;
 
             for (int i = 0; i < input.Length; i++)
             {

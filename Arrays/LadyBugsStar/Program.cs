@@ -8,14 +8,14 @@ namespace LadyBugsStar
         static void Main(string[] args)
         {
             int sizeField = int.Parse(Console.ReadLine());
-            int[] bugsField = new int[sizeField];
+            int[] bugsSize = new int[sizeField];
             int[] startPositions = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
             foreach (var index in startPositions)
             {
-                if (index >= 0 && index < bugsField.Length)
+                if (index >= 0 && index < bugsSize.Length)
                 {
-                    bugsField[index] = 1;
+                    bugsSize[index] = 1;
                 }
             }
 
@@ -26,54 +26,52 @@ namespace LadyBugsStar
                 int step = int.Parse(command.Split()[2]);
                 string direction = command.Split()[1];
 
-                if (startIndex >= 0 && startIndex < bugsField.Length)
+                if (startIndex >= 0 && startIndex < bugsSize.Length)
                 {
-                    if (bugsField[startIndex] == 0 || step == 0)
+                    if (bugsSize[startIndex] == 0 || step == 0)
                     {
                         continue;
                     }
-                    else
-                    {
-                        bugsField[startIndex] = 0;
 
-                        if (direction == "left")
+                    if (direction != "left" && direction != "right")
+                    {
+                        bugsSize[startIndex] = 1;
+                        continue;
+                    }
+
+                    bugsSize[startIndex] = 0;
+                    if (direction == "left")
+                    {
+                        if (startIndex - step >= 0 && startIndex - step < sizeField)
                         {
-                            if (startIndex - step >= 0 && startIndex - step < sizeField)
+                            for (int i = startIndex - step; i < sizeField; i -= step)
                             {
-                                for (int i = startIndex - step; i < sizeField; i -= step)
+                                if (bugsSize[i] == 0)
                                 {
-                                    if (bugsField[i] == 0)
-                                    {
-                                        bugsField[i] = 1;
-                                        break;
-                                    }
+                                    bugsSize[i] = 1;
+                                    break;
                                 }
                             }
                         }
-                        else if (direction == "right")
+                    }
+                    else if (direction == "right")
+                    {
+                        if (startIndex + step >= 0 && startIndex + step < sizeField)
                         {
-                            if (startIndex + step >= 0 && startIndex + step < sizeField)
+                            for (int i = startIndex + step; i < sizeField; i += step)
                             {
-                                for (int i = startIndex + step; i < sizeField; i += step)
+                                if (bugsSize[i] == 0)
                                 {
-                                    if (bugsField[i] == 0)
-                                    {
-                                        bugsField[i] = 1;
-                                        break;
-                                    }
+                                    bugsSize[i] = 1;
+                                    break;
                                 }
                             }
-                        }
-                        else
-                        {
-                            bugsField[startIndex] = 1;
-                            continue;
                         }
                     }
                 }
             }
 
-            Console.WriteLine(string.Join(" ", bugsField));
+            Console.WriteLine(string.Join(" ", bugsSize));
         }
     }
 }
