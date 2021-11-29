@@ -16,7 +16,7 @@ namespace Students2._0
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Age = age;
-            this.HomeTown = homeTown;
+            this.TownName = homeTown;
         }
 
         public string FirstName
@@ -64,7 +64,7 @@ namespace Students2._0
                 }
             }
         }
-        public string HomeTown
+        public string TownName
         {
             get => homeTown;
             set
@@ -93,6 +93,5 @@ namespace Students2._0
 
                 return isValid;
         }
-        //TODO method validation get, set and constructor
     }
 }

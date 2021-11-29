@@ -15,13 +15,14 @@ namespace Students2._0
             {
                 string[] tokens = input.Split(' ');
 
-                if (IsExisting(students, tokens[0], tokens[1]))
+                int index = IsExisting(students, tokens[0], tokens[1]);
+                if (index >= 0)
                 {
-                    Student student = GetStudent(students, tokens[0], tokens[1]);
+                    Student student = GetStudent(students,index);
                     student.FirstName = tokens[0];
                     student.LastName = tokens[1];
                     student.Age = int.Parse(tokens[2]);
-                    student.HomeTown = tokens[3];
+                    student.TownName = tokens[3];
                 }
                 else
                 {
@@ -32,10 +33,10 @@ namespace Students2._0
                 input = Console.ReadLine();
             }
 
-            string townToSearch = Console.ReadLine();
+            string searchTown = Console.ReadLine();
 
             List<Student> filteredStudents = students
-                .Where(x => x.HomeTown == townToSearch)
+                .Where(x => x.TownName == searchTown)
                 .ToList();
 
             foreach (Student student in filteredStudents)
@@ -44,32 +45,25 @@ namespace Students2._0
             }
         }
 
-        static bool IsExisting(List<Student> students, string firstName, string lastName)
+        //GetStudentIndex
+        //From 0 to List.Count - 1
+        static int IsExisting(List<Student> students, string firstName, string lastName)
         {
+            int indexOfStudent = -1;
             foreach (Student student in students)
             {
                 if (student.FirstName == firstName && student.LastName == lastName)
                 {
-                    return true;
+                    indexOfStudent = students.IndexOf(student);
                 }
             }
 
-            return false;
+            return indexOfStudent;
         }
 
-        static Student GetStudent(List<Student> students, string firstName, string lastName)
+        static Student GetStudent(List<Student> students, int index)
         {
-            Student existingStudent = null;
-
-            foreach (Student student in students)
-            {
-                if (student.FirstName == firstName && student.LastName == lastName)
-                {
-                    existingStudent = student;
-                }
-            }
-
-            return existingStudent;
+            return students[index];
         }
     }
 
