@@ -15,10 +15,10 @@ namespace Students2._0
             {
                 string[] tokens = input.Split(' ');
 
-                int index = IsExisting(students, tokens[0], tokens[1]);
-                if (index >= 0)
+                int studentIndex = IsExisting(students, tokens[0], tokens[1]);
+                if (studentIndex >= 0)
                 {
-                    Student student = GetStudent(students,index);
+                    Student student = GetStudentById(students, studentIndex);
                     student.Age = int.Parse(tokens[2]);
                     student.TownName = tokens[3];
                 }
@@ -57,7 +57,7 @@ namespace Students2._0
             return indexOfStudent;
         }
 
-        static Student GetStudent(List<Student> students, int index)
+        static Student GetStudentById(List<Student> students, int index)
         {
             return students[index];
         }
