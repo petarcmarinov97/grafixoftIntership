@@ -19,8 +19,6 @@ namespace Students2._0
                 if (index >= 0)
                 {
                     Student student = GetStudent(students,index);
-                    student.FirstName = tokens[0];
-                    student.LastName = tokens[1];
                     student.Age = int.Parse(tokens[2]);
                     student.TownName = tokens[3];
                 }
