@@ -45,8 +45,6 @@ namespace Students2._0
             }
         }
 
-        //GetStudentIndex
-        //From 0 to List.Count - 1
         static int IsExisting(List<Student> students, string firstName, string lastName)
         {
             int indexOfStudent = -1;
