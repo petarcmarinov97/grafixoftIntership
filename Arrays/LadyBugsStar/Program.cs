@@ -8,14 +8,14 @@ namespace LadyBugsStar
         static void Main(string[] args)
         {
             int sizeField = int.Parse(Console.ReadLine());
-            int[] bugsSize = new int[sizeField];
+            int[] bugs = new int[sizeField];
             int[] startPositions = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
             foreach (var index in startPositions)
             {
-                if (index >= 0 && index < bugsSize.Length)
+                if (index >= 0 && index < bugs.Length)
                 {
-                    bugsSize[index] = 1;
+                    bugs[index] = 1;
                 }
             }
 
@@ -26,29 +26,29 @@ namespace LadyBugsStar
                 int step = int.Parse(command.Split()[2]);
                 string direction = command.Split()[1];
 
-                if (startIndex >= 0 && startIndex < bugsSize.Length)
+                if (startIndex >= 0 && startIndex < bugs.Length)
                 {
-                    if (bugsSize[startIndex] == 0 || step == 0)
+                    if (bugs[startIndex] == 0 || step == 0)
                     {
                         continue;
                     }
 
                     if (direction != "left" && direction != "right")
                     {
-                        bugsSize[startIndex] = 1;
+                        bugs[startIndex] = 1;
                         continue;
                     }
 
-                    bugsSize[startIndex] = 0;
+                    bugs[startIndex] = 0;
                     if (direction == "left")
                     {
                         if (startIndex - step >= 0 && startIndex - step < sizeField)
                         {
                             for (int i = startIndex - step; i < sizeField; i -= step)
                             {
-                                if (bugsSize[i] == 0)
+                                if (bugs[i] == 0)
                                 {
-                                    bugsSize[i] = 1;
+                                    bugs[i] = 1;
                                     break;
                                 }
                             }
@@ -60,9 +60,9 @@ namespace LadyBugsStar
                         {
                             for (int i = startIndex + step; i < sizeField; i += step)
                             {
-                                if (bugsSize[i] == 0)
+                                if (bugs[i] == 0)
                                 {
-                                    bugsSize[i] = 1;
+                                    bugs[i] = 1;
                                     break;
                                 }
                             }
@@ -71,7 +71,7 @@ namespace LadyBugsStar
                 }
             }
 
-            Console.WriteLine(string.Join(" ", bugsSize));
+            Console.WriteLine(string.Join(" ", bugs));
         }
     }
 }
