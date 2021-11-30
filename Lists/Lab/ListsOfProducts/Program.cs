@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace ListsOfProducts
 {
@@ -16,16 +17,17 @@ namespace ListsOfProducts
                 finalArr.Add(Console.ReadLine());
             }
 
-            PrintSortProducts(finalArr);
+            PrintProducts(finalArr);
         }
 
-        static void PrintSortProducts(List<string> finalArr)
+        static void PrintProducts(List<string> finalArr)
         {
-            finalArr.Sort();
+            List<string> sortedProducts = finalArr;
+            sortedProducts.Sort();
 
-            for (int i = 0; i < finalArr.Count; i++)
+            for (int i = 0; i < sortedProducts.Count; i++)
             {
-                Console.WriteLine($"{i + 1}.{finalArr[i]}");
+                Console.WriteLine($"{i + 1}.{sortedProducts[i]}");
             }
         }
     }

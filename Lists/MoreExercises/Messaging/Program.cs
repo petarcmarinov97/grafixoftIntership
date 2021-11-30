@@ -10,7 +10,8 @@ namespace Messaging
         static void Main(string[] args)
         {
             List<string> list = Console.ReadLine().Split().ToList();
-            List<char> charText = Console.ReadLine().ToList();
+            string text = Console.ReadLine();
+
 
             List<char> listElements = new List<char>();
             List<int> sumList = new List<int>();
@@ -28,16 +29,16 @@ namespace Messaging
                 sumList.Add(currSum);
                 currSum = 0;
 
-                if (sumList[i] <= charText.Count)
+                if (sumList[i] <= text.Length)
                 {
-                    Console.Write(charText[sumList[i]]);
-                    charText.RemoveAt(sumList[i] - 1);
+                    Console.Write(text[sumList[i]]);
+                    text = text.Remove(sumList[i] - 1,1);
                 }
                 else
                 {
-                    int index = sumList[i] % charText.Count;
-                    Console.Write(charText[index]);
-                    charText.RemoveAt(index);
+                    int index = sumList[i] % text.Length;
+                    Console.Write(text[index]);
+                    text = text.Remove(index,1);
                 }
             }
 

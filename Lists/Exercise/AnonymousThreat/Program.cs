@@ -30,7 +30,6 @@ namespace AnonymousThreat
 
                 if (command[0] == "merge")
                 {
-
                     for (int i = startIndex; i <= endIndex; i++)
                     {
                         newElement += list[i];

@@ -80,7 +80,6 @@ namespace SoftUniCoursePlanning
                                 {
                                     list.RemoveAt(firstTitleIndex + 2);
                                 }
-
                             }
                             else if (list[secondTitleIndex + 1] == $"{secondTitle}-Exercise")
                             {
