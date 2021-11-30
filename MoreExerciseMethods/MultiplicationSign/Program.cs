@@ -10,10 +10,10 @@ namespace MultiplicationSign
             double num2 = double.Parse(Console.ReadLine());
             double num3 = double.Parse(Console.ReadLine());
 
-            Sign(num1, num2, num3);
+            PrintSign(num1, num2, num3);
         }
 
-        static void Sign(double n1, double n2, double n3)
+        static void PrintSign(double n1, double n2, double n3)
         {
             if (n1 == 0 || n2 == 0 || n3 == 0)
             {

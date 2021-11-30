@@ -39,15 +39,15 @@ namespace demoTesting
 
             // Declaring variable
             // without assigning value
-            int G;
+            int g;
 
             // Pass variable G to the method
             // using out keyword
-            Sum(out G);
+            Sum(out g);
 
             // Display the value G
             Console.WriteLine("The sum of" +
-                    " the value is: {0}", G);
+                    " the value is: {0}", g);
         }
 
 
@@ -80,7 +80,6 @@ namespace demoTesting
             return x + y + z + k;
         }
     }
-
 }
 
 //create the method

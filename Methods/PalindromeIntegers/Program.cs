@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace PalindromeIntegers
 {
@@ -8,31 +9,20 @@ namespace PalindromeIntegers
         {
             string input = Console.ReadLine();
 
-            Palindrome(input);
-        }
-
-        static void Palindrome(string input)
-        {
             while (input != "END")
             {
-                string reversed = string.Empty;
-
-                for (int i = input.Length - 1; i >= 0; i--)
-                {
-                    reversed += input[i];
-                }
-
-                if (reversed == input)
-                {
-                    Console.WriteLine("true");
-                }
-                else
-                {
-                    Console.WriteLine("false");
-                }
+                Console.WriteLine(isPalindrome(input).ToString().ToLower());
 
                 input = Console.ReadLine();
             }
         }
+
+        static bool isPalindrome(string input)
+        {
+            string reversedNumber = new string(input.ToCharArray().Reverse().ToArray());
+
+            return reversedNumber == input;
+        }
     }
 }
+

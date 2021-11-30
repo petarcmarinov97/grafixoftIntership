@@ -8,10 +8,10 @@ namespace TopNumber
         {
             int input = int.Parse(Console.ReadLine());
 
-            GetTopNumber(input);
+            PrintTopNumber(input);
         }
 
-        static void GetTopNumber(int number)
+        static void PrintTopNumber(int number)
         {
             for (int i = 1; i <= number; i++)
             {
@@ -24,14 +24,16 @@ namespace TopNumber
 
         static bool HasOddDigits(int number)
         {
-            while (number > 0)
+            int newNumber = number;
+
+            while (newNumber > 0)
             {
-                if ((number % 10) % 2 == 1)
+                if ((newNumber % 10) % 2 == 1)
                 {
                     return true;
-
                 }
-                number /= 10;
+
+                newNumber /= 10;
             }
             return false;
 
@@ -45,7 +47,7 @@ namespace TopNumber
                 sum += newNumber % 10;
                 newNumber /= 10;
             }
-            return sum % 8 == 0 ? true : false;
+            return sum % 8 == 0;
         }
     }
 }

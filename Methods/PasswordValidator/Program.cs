@@ -9,48 +9,49 @@ namespace PasswordValidator
         {
             string password = Console.ReadLine();
 
-            if (AreCharactersContains(password) && AreOnlyLettersAndDigit(password) && AreMoreThanTwoDigits(password))
+            if (ContainsCharacters(password) && HasOnlyLettersOrDigits(password) && HasMoreThanTwoDigits(password))
             {
                 Console.WriteLine("Password is valid");
             }
 
-            if (!AreCharactersContains(password))
+            if (!ContainsCharacters(password))
             {
                 Console.WriteLine("Password must be between 6 and 10 characters");
             }
 
-            if (!AreOnlyLettersAndDigit(password))
+            if (!HasOnlyLettersOrDigits(password))
             {
                 Console.WriteLine("Password must consist only of letters and digits");
             }
 
-            if (!AreMoreThanTwoDigits(password))
+            if (!HasMoreThanTwoDigits(password))
             {
                 Console.WriteLine("Password must have at least 2 digits");
             }
         }
 
-        static bool AreCharactersContains(string pass)
+        static bool ContainsCharacters(string pass)
         {
-            return pass.Length >= 6 && pass.Length <= 10 ? true : false;
+            return pass.Length >= 6 && pass.Length <= 10;
         }
 
-        static bool AreOnlyLettersAndDigit(string pass)
+        static bool HasOnlyLettersOrDigits(string pass)
         {
-            bool isContains = true;
+            bool contains = true;
 
             for (int i = 0; i < pass.Length; i++)
             {
                 if (!(Char.IsLetterOrDigit(pass[i])))
                 {
-                    isContains = false;
+                    contains = false;
                     break;
                 }
             }
-            return isContains;
+
+            return contains;
         }
 
-        static bool AreMoreThanTwoDigits(string pass)
+        static bool HasMoreThanTwoDigits(string pass)
         {
             int counter = 0;
             for (int i = 0; i < pass.Length; i++)
@@ -61,7 +62,7 @@ namespace PasswordValidator
                 }
             }
 
-            return counter >= 2 ? true : false;
+            return counter >= 2;
         }
     }
 }

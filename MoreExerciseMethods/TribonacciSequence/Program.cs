@@ -8,10 +8,10 @@ namespace TribonacciSequence
         {
             int number = int.Parse(Console.ReadLine());
 
-            GetTribonaci(number);
+            PrintTribonaci(number);
         }
 
-        static void GetTribonaci(int number)
+        static void PrintTribonaci(int number)
         {
             int n1 = 1;
             int n2 = 1;

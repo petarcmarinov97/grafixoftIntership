@@ -9,11 +9,10 @@ namespace NxNMatrix
         {
             int n = int.Parse(Console.ReadLine());
 
-            DoMatrix(n);
-
+            DisplayMatrix(n);
         }
 
-        static void DoMatrix(int number)
+        static void DisplayMatrix(int number)
         {
             string numberString = number.ToString();
             for (int row = 0; row < number; row++)
@@ -22,6 +21,7 @@ namespace NxNMatrix
                 {
                     Console.Write(number + " ");
                 }
+
                 Console.WriteLine();
             }
         }

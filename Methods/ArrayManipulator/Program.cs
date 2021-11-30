@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace ArrayManipulator
 {
@@ -18,148 +19,121 @@ namespace ArrayManipulator
                     int splitIndex = int.Parse(commands[1]);
                     if (splitIndex < arr.Length && splitIndex >= 0)
                     {
-                        ExchangeArray(arr, splitIndex);
+                        arr = ExchangeArray(arr, splitIndex);
                     }
                     else
                     {
                         Console.WriteLine("Invalid index");
                     }
                 }
-                else if (commands[0] == "max" || commands[0] == "min")
+                else if (commands[0] == "max")
                 {
-                    Console.WriteLine(GetEvenOddMaxMin(arr, commands[0], commands[1]));
+                    PrintTheMaxOddOrEvenNumber(arr, commands[1]);
                 }
-                else if (commands[0] == "first" || commands[0] == "last")
+                else if (commands[0] == "min")
                 {
-                    int count = int.Parse(commands[1]);
-
-                    if (count <= arr.Length)
-                    {
-                        Console.WriteLine("[" + GetFirstLast(GetEvenOddArray(arr, commands[2]), commands[0], count) + "]");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid count");
-                    }
+                    PrintTheMinOddOrEvenNumber(arr, commands[1]);
+                }
+                else if (commands[0] == "first")
+                {
+                    PrintTheFirstOddOrEvenNumbersInArray(arr, int.Parse(commands[1]), commands[2]);
+                }
+                else if (commands[0] == "last")
+                {
+                    PrintTheLastNOddOrEvenNumbersInArray(arr, int.Parse(commands[1]), commands[2]);
                 }
                 input = Console.ReadLine();
             }
+
             Console.WriteLine("[" + string.Join(", ", arr) + "]");
         }
 
-        static void ExchangeArray(int[] arr, int splitIndex)
+        static int[] ExchangeArray(int[] arr, int splitIndex)
         {
-            int[] exchangedArr = new int[arr.Length];
-            int indexExchArr = 0;
-
-            for (int i = splitIndex + 1; i < arr.Length; i++)
-            {
-                exchangedArr[indexExchArr] = arr[i];
-                indexExchArr++;
-            }
-
-            for (int i = 0; i <= splitIndex; i++)
-            {
-                exchangedArr[indexExchArr] = arr[i];
-                indexExchArr++;
-            }
-
-            Array.Copy(exchangedArr, arr, arr.Length);
-        }
-
-        static string GetEvenOddMaxMin(int[] arr, string maxMin, string evenOdd)
-        {
-            int index = -1;
-            int max = int.MinValue;
-            int min = int.MaxValue;
-            int resultFromModDiv = 0;
-            string result = string.Empty;
-
-            if (evenOdd == "odd")
-            {
-                resultFromModDiv = 1;
-            }
+            int[] newarr = new int[arr.Length];
+            int n = splitIndex + 1;
 
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] % 2 == resultFromModDiv && maxMin == "min" && arr[i] <= min)
+                if (n >= arr.Length)
                 {
-                    index = i;
-                    min = arr[i];
+                    n = 0;
                 }
-                else if (arr[i] % 2 == resultFromModDiv && maxMin == "max" && arr[i] >= max)
-                {
-                    index = i;
-                    max = arr[i];
-                }
+                newarr[i] = arr[n];
+                n++;
             }
+            return newarr;
+        }
 
-            if (index >= 0)
+        static void PrintTheMaxOddOrEvenNumber(int[] numbers, string evenOdd)
+        {
+            int moddifier = evenOdd == "odd" ? 1 : 0;
+
+            if (numbers.Any(x => x % 2 == moddifier))
             {
-                result = index.ToString();
+                var maxOdd = numbers.Where(x => x % 2 == moddifier).Max();
+                var indexMax = numbers.ToList().LastIndexOf(maxOdd);
+
+                Console.WriteLine(indexMax);
             }
             else
             {
-                result = "No matches";
+                Console.WriteLine("No matches");
             }
+        }
+        static void PrintTheMinOddOrEvenNumber(int[] numbers, string evenOdd)
+        {
+            int moddifier = evenOdd == "odd" ? 1 : 0;
 
-            return result;
+            if (numbers.Any(x => x % 2 == moddifier))
+            {
+                int minOdd = numbers.Where(x => x % 2 == moddifier).Min();
+                int indexMin = numbers.ToList().LastIndexOf(minOdd);
+
+                Console.WriteLine(indexMin);
+            }
+            else
+            {
+                Console.WriteLine("No matches");
+            }
         }
 
-        static int[] GetEvenOddArray(int[] arr, string evenOdd)
+        static void PrintTheFirstOddOrEvenNumbersInArray(int[] numbers, int count, string evenOdd)
         {
-            int[] evenOrOdd = new int[arr.Length];
-            int index = 0;
-            int resultFromModDiv = 0;
-
-            if (evenOdd == "odd")
+            if (count > numbers.Length)
             {
-                resultFromModDiv = 1;
+                Console.WriteLine("Invalid count");
+                return;
             }
 
-            for (int i = 0; i < arr.Length; i++)
+            List<int> sequence = new List<int>();
+            int moddifier = evenOdd == "odd" ? 1 : 0;
+
+            if (numbers.Any(x => x % 2 == moddifier))
             {
-                if (arr[i] % 2 == resultFromModDiv)
-                {
-                    evenOrOdd[index] = arr[i];
-                    index++;
-                }
+                sequence = numbers.Where(x => x % 2 == moddifier).ToList();
             }
 
-            arr = new int[index];
-            Array.Copy(evenOrOdd, arr, index);
-            return arr;
+            Console.WriteLine($"[{String.Join(", ", sequence.Take(Math.Min(count, sequence.Count)))}]");
         }
 
-        static string GetFirstLast(int[] arr, string firstLast, int count)
+        static void PrintTheLastNOddOrEvenNumbersInArray(int[] numbers, int count, string evenOdd)
         {
-            int[] newArr = new int[arr.Length];
-            int index = 0;
-
-            if (firstLast == "first")
+            if (count > numbers.Length)
             {
-                for (int i = 0; i < count && i < arr.Length; i++)
-                {
-                    newArr[index] = arr[i];
-                    index++;
-                }
-            }
-            else if (firstLast == "last")
-            {
-                if (count > arr.Length)
-                {
-                    count = arr.Length;
-                }
-                for (int i = arr.Length - count; i < arr.Length; i++)
-                {
-                    newArr[index] = arr[i];
-                    index++;
-                }
+                Console.WriteLine("Invalid count");
+                return;
             }
 
-            arr = new int[index];
-            Array.Copy(newArr, arr, index);
-            return string.Join(", ", arr);
+            List<int> sequence = new List<int>();
+            int moddifier = evenOdd == "odd" ? 1 : 0;
+
+            if (numbers.Any(x => x % 2 == moddifier))
+            {
+                sequence = numbers.Where(x => x % 2 == moddifier).ToList();
+            }
+
+            Console.WriteLine($"[{String.Join(", ", sequence.TakeLast(Math.Min(count, sequence.Count)))}]");
         }
     }
 }
