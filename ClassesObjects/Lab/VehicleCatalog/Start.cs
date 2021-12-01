@@ -35,9 +35,10 @@ namespace VehicleCatalog
                 input = Console.ReadLine();
             }
             ;
-            //string typeVehicle = "Car";
             Console.WriteLine("______________________________");
             catalog.PrintVehicles();
+            Console.WriteLine("______________________________");
+            catalog.PrintVehicles("Truck");
         }
     }
 }

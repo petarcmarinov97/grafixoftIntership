@@ -5,9 +5,9 @@ using System.Text;
 namespace VehicleCatalog
 {
     //Add interface for the car 
-    internal class Car : Vehicle
+    internal class Car : Vehicle, ICar
     {
-        private string housePower;
+        private string horsePower;
         public Car(string type, string brand, string model, string horsePower) : base(type, brand, model)
         {
             this.HorsePower = horsePower;
@@ -15,12 +15,12 @@ namespace VehicleCatalog
 
         public string HorsePower
         {
-            get => housePower;
+            get => horsePower;
             set
             {
                 if (IsValidHorses(value))
                 {
-                    housePower = value;
+                    horsePower = value;
                 }
                 else
                 {
@@ -34,9 +34,11 @@ namespace VehicleCatalog
             return int.Parse(power) > 0;
         }
 
-        public override string GetAditionalValue()
+        public override string GetVehicleInfo()
         {
-            return this.housePower+"hp";
+            string result = Type + " ---> " + Model + " - " + Brand + " - " + HorsePower + "hp";
+            
+            return result;
         }
     }
 }

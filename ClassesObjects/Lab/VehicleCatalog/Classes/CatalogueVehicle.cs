@@ -15,49 +15,21 @@ namespace VehicleCatalog
 
         public void PrintVehicles()
         {
-            //Car --> Audi: A3 - hors power 
-            foreach(Vehicle vehicle in Vehicles)
+            foreach (Vehicle vehicle in Vehicles)
             {
-                string aditionalValue = vehicle.GetAditionalValue();
-                Console.WriteLine($"{vehicle.Type}: {vehicle.Model} - {vehicle.Brand} - {aditionalValue}");
+                Console.WriteLine(vehicle.GetVehicleInfo());
             }
+        }
 
-            /*foreach(Truck truck in Vehicles)
+        public void PrintVehicles(string typeVehicle)
+        {
+            foreach (Vehicle vehicle in Vehicles)
             {
-                Console.WriteLine($"{truck.Brand}: {truck.Model} - {truck.Weight}kg");
-            }*/
+                if (vehicle.Type == typeVehicle)
+                {
+                    Console.WriteLine(vehicle.GetVehicleInfo());
+                }
+            }
         }
     }
-    /* public void PrintVehicles(string typeVehicle)
-     {
-         if (typeVehicle == "Car")
-         {
-             Console.WriteLine($"Cars:");
-             foreach (Vehicle vehicle in Vehicles)
-             {
-                 if (vehicle.GetType() == typeof(Car))
-                 {
-                     var car = (Car)vehicle;
-                     Console.WriteLine($"{car.Brand}: {car.Model} - {car.HorsePower}hp");
-                 }
-             }
-         }
-
-         if (typeVehicle == "Truck")
-         {
-             Console.WriteLine($"Trucks:");
-             foreach (Vehicle vehicle in Vehicles)
-             {
-                 if (vehicle.GetType() == typeof(Truck))
-                 {
-                     var truck = (Truck)vehicle;
-                     Console.WriteLine($"{truck.Brand}: {truck.Model} - {truck.Weight}kg");
-                 }
-             }
-       */
 }
-//Two Methods for catalog one of them with parameter(type String) and the other parameterless Method
-//Method Overloading !!!!!!!!
-//If we pass a param -> Print only the Vehicles from the params example: cars-> print only the cars
-//If is empty pass -> print all the vehicles includes cars and trucks
-//User friendly error exepssions 

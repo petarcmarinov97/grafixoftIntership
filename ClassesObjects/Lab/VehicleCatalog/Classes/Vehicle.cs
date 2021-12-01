@@ -86,6 +86,6 @@ namespace VehicleCatalog
                 return isValid;
             }
 
-        public abstract string GetAditionalValue();
+        public abstract string GetVehicleInfo();
     }
 }
