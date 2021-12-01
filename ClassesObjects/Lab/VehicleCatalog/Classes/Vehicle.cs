@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace VehicleCatalog
 {
@@ -55,7 +56,6 @@ namespace VehicleCatalog
                 type= value;
             }
         }
-
         protected bool IsValidBrand(string brand)
         {
             bool isValid = brand.Length >= 2 && brand.Length <= 15;

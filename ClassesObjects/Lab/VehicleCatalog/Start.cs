@@ -35,10 +35,48 @@ namespace VehicleCatalog
                 input = Console.ReadLine();
             }
             ;
+            //Console.WriteLine("______________________________");
+            //catalog.PrintVehicles();
+            //Console.WriteLine("______________________________");
+            //catalog.PrintVehicles("Truck");
             Console.WriteLine("______________________________");
-            catalog.PrintVehicles();
+
+            Console.WriteLine("To search a vehicle by type and model type 1 !");
             Console.WriteLine("______________________________");
-            catalog.PrintVehicles("Truck");
+            Console.WriteLine("To Remove a vehicle type 2 !");
+            Console.WriteLine("______________________________");
+            Console.WriteLine("To Sort Cars by a criteria type 3 !");
+            Console.WriteLine("______________________________");
+
+            int answer = int.Parse(Console.ReadLine());
+            if (answer == 1)
+            {
+                Console.WriteLine("Please enter data correctly in this line:\n  Type/Brand");
+                string[] searchData = Console.ReadLine().Split('/');
+                string type = searchData[0];
+                string brand = searchData[1];
+
+                Console.WriteLine("\nSecond Example:");
+
+                catalog.PrintVehicles(catalog.GetByTypeAndBrand(type, brand));
+            }
+            else if (answer == 2)
+            {
+                Console.WriteLine("Please enter data correctly in this line:\n  Type/Brand/Model");
+                string[] removeData = Console.ReadLine().Split('/');
+                string type = removeData[0];
+                string brand = removeData[1];
+                string model = removeData[2];
+
+                catalog.RemoveVehicles(type, brand, model);
+            }
+            else if(answer == 3)
+            {
+                Console.WriteLine("Please enter the criteria which you want to be used:\n   accending or descending");
+                string criteria = Console.ReadLine();
+
+                catalog.PrintVehicles(catalog.GetVehiclesByCriteria(criteria));
+            }
         }
     }
 }

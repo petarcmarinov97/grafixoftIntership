@@ -21,6 +21,13 @@ namespace VehicleCatalog
             {
                 return new Truck(typeVehicle, brand, model, options);
             }
+            else if(typeVehicle == "MotorCycle")
+            {
+                Console.WriteLine("Please select a color for your Vehicle!");
+                string color = Console.ReadLine();
+
+                return new MotorCycle(typeVehicle, brand, model, options, color);
+            }
 
             return null;
         }

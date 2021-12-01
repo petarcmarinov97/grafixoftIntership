@@ -13,16 +13,18 @@ namespace VehicleCatalog
             this.Weight = weight;
         }
 
-        public string Weight {
-            get =>weight;
+        public string Weight
+        {
+            get => weight;
             set
             {
-            
+                weight = value;
             }
+        }
 
         public override string GetVehicleInfo()
         {
-            string result = Type + " ---> " + Model + " - " + Brand + " - " + Weight + "kg";
+            string result = Type + " ---> " + Brand + " - " + Model + " - " + Weight + "kg";
 
             return result;
         }

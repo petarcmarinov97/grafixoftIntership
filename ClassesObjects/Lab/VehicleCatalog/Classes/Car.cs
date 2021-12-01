@@ -4,8 +4,7 @@ using System.Text;
 
 namespace VehicleCatalog
 {
-    //Add interface for the car 
-    internal class Car : Vehicle, ICar
+    internal class Car : Vehicle, IFastVehicles
     {
         private string horsePower;
         public Car(string type, string brand, string model, string horsePower) : base(type, brand, model)
@@ -36,7 +35,7 @@ namespace VehicleCatalog
 
         public override string GetVehicleInfo()
         {
-            string result = Type + " ---> " + Model + " - " + Brand + " - " + HorsePower + "hp";
+            string result = Type + " ---> " + Brand + " - " + Model + " - " + HorsePower + "hp";
             
             return result;
         }
