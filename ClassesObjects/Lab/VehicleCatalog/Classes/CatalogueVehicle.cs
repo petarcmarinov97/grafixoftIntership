@@ -44,18 +44,17 @@ namespace VehicleCatalog
         }
         public List<Vehicle> GetVehiclesByCriteria(string criteria)
         {
-            List<Vehicle> cars = Vehicles;
-            List<Vehicle> newCars = cars;
+            List<Vehicle> cars = new List<Vehicle>();
             if (criteria == "accending")
             {
-                newCars = cars.OrderBy(x => x.Brand).ToList();
+                cars = Vehicles.OrderBy(x => x.Brand).ToList();
             }
             else if (criteria == "descending")
             {
-                newCars = cars.OrderByDescending(x => x.Brand).ToList();
+                cars = Vehicles.OrderByDescending(x => x.Brand).ToList();
             }
 
-            return newCars;
+            return cars;
         }
         public void RemoveVehicles(string typeVehicle, string brand, string model)
         {
@@ -76,18 +75,8 @@ namespace VehicleCatalog
             }
         }
 
-        /*public void PrintVehicles(string typeVehicle, string brand)
-        {
-            foreach (Vehicle vehicle in Vehicles)
-            {
-                if (vehicle.Type == typeVehicle && vehicle.Brand == brand)
-                {
-                    Console.WriteLine(vehicle.GetVehicleInfo());
-                }
-            }
-        }*/
         // [x] Add new class motorcycle with two properties ( другото да е цвят или нш друго) 
-        // [] Sort acc/dec alphabetical by the parameter example sort("accending"/"decending")
+        // [x] Sort acc/dec alphabetical by the parameter example sort("accending"/"decending")
         // [x] Select function -> passing a type(car, truck ...) and search by Model Name. ---> Printing the vehicles.
         // [x] Remove function -> passing a type(car, truck ...) and search by Model Name. ---> Remove the vehicles from the list.
 
