@@ -56,7 +56,7 @@ namespace VehicleCatalog
                 type= value;
             }
         }
-        protected bool IsValidBrand(string brand)
+        public bool IsValidBrand(string brand)
         {
             bool isValid = brand.Length >= 2 && brand.Length <= 15;
 
@@ -71,7 +71,7 @@ namespace VehicleCatalog
             return isValid;
         }
 
-        protected bool IsValidModel(string model)
+        public bool IsValidModel(string model)
         {
                 bool isValid = model.Length >= 2 && model.Length <= 15;
 

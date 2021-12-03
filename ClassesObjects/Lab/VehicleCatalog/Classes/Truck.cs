@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VehicleCatalog
 {
-    internal class Truck : Vehicle, ITruck
+    public class Truck : Vehicle, ITruck
     {
         private string weight;
 
@@ -18,8 +18,20 @@ namespace VehicleCatalog
             get => weight;
             set
             {
-                weight = value;
+                if (IsValidWeight(value))
+                {
+                    weight = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Invalid weight !");
+                }
             }
+        }
+
+        protected bool IsValidWeight(string weight)
+        {
+            return int.Parse(weight) > 0;
         }
 
         public override string GetVehicleInfo()

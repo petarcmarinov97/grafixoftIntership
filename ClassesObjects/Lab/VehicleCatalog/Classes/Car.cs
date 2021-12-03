@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VehicleCatalog
 {
-    internal class Car : Vehicle, IFastVehicles
+    public class Car : Vehicle, IFastVehicles
     {
         private string horsePower;
         public Car(string type, string brand, string model, string horsePower) : base(type, brand, model)
