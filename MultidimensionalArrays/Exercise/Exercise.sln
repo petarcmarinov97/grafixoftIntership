@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Knights", "Knights\Knights.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miner", "Miner\Miner.csproj", "{BB93A8AF-5333-49A0-9E4E-F1C7CB8F153C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8C71CFDF-B212-44B6-A1A0-9FB890585E06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Bombs", "Test_Bombs\Test_Bombs.csproj", "{E3953E33-D2F8-4124-B2F8-E5D4D3DE6839}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{BB93A8AF-5333-49A0-9E4E-F1C7CB8F153C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB93A8AF-5333-49A0-9E4E-F1C7CB8F153C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB93A8AF-5333-49A0-9E4E-F1C7CB8F153C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3953E33-D2F8-4124-B2F8-E5D4D3DE6839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3953E33-D2F8-4124-B2F8-E5D4D3DE6839}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3953E33-D2F8-4124-B2F8-E5D4D3DE6839}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3953E33-D2F8-4124-B2F8-E5D4D3DE6839}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E3953E33-D2F8-4124-B2F8-E5D4D3DE6839} = {8C71CFDF-B212-44B6-A1A0-9FB890585E06}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D792169F-8E80-492C-B0CA-C3FE9E7FF68C}
