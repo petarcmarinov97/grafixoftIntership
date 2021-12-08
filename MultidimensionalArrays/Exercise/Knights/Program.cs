@@ -23,13 +23,14 @@ namespace Knights
                 matrix[i] = row;
             }
 
+            if (n < 3)
+            {
+                Console.WriteLine("0");
+                isEncircling = true;
+            }
+
             while (isEncircling == false)
             {
-                if (n < 3)
-                {
-                    Console.WriteLine("0");
-                    isEncircling=true;
-                }
 
                 LoopWhenIsOverTree();
 
