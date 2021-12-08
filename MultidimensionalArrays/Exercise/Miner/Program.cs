@@ -5,7 +5,6 @@ namespace Miner
 {
     public class Program
     {
-
         static char[,] matrix;
         static int minorRow;
         static int minorCol;

@@ -10,9 +10,9 @@ namespace JaggedArrayManipulator
         public static double value;
         public static double[][] matrix;
         public static double[][] analyzedMatrix;
-        public static bool isEnd = false;
         public static string[] commands;
         public static int numberOfRows;
+
         static void Main(string[] args)
         {
             numberOfRows = int.Parse(Console.ReadLine());
@@ -20,18 +20,11 @@ namespace JaggedArrayManipulator
             matrix = GetPopulatedMatrix(numberOfRows);
             analyzedMatrix = GetAnalyzedMatrix(matrix, numberOfRows);
 
-            string command = Console.ReadLine();
-
             do
             {
-                commands = command.Split(" ", System.StringSplitOptions.RemoveEmptyEntries).ToArray();
+                commands = Console.ReadLine().Split(" ", System.StringSplitOptions.RemoveEmptyEntries).ToArray();
 
                 ManipulationThrewTheCells();
-
-                if (isEnd != true)
-                {
-                    command = Console.ReadLine();
-                }
             }
             while (commands[0].ToLower() != "end");
         }
@@ -103,27 +96,32 @@ namespace JaggedArrayManipulator
             }
         }
     
+        public static void DestructInput()
+        {
+            row = int.Parse(commands[1]);
+            column = int.Parse(commands[2]);
+            value = double.Parse(commands[3]);
+        }
         public static void ManipulationThrewTheCells()
         {
             switch (commands[0].ToLower())
             {
                 case "add":
-                    row = int.Parse(commands[1]);
-                    column = int.Parse(commands[2]);
-                    value = double.Parse(commands[3]);
+                    DestructInput();
                     AddValueToTheCurrentCell();
                     break;
 
                 case "subtract":
-                    row = int.Parse(commands[1]);
-                    column = int.Parse(commands[2]);
-                    value = double.Parse(commands[3]);
+                    DestructInput();
                     SubtractValueFromTheCurrentCell();
                     break;
 
-                default:
-                    isEnd = true;
+                case "end":
                     PrintFinalMatrix(analyzedMatrix, numberOfRows);
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid command!");
                     break;
             }
         }
