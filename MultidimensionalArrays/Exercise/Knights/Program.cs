@@ -15,13 +15,7 @@ namespace Knights
         {
             int n = int.Parse(Console.ReadLine());
             matrix = new char[n][];
-
-            for (int i = 0; i < matrix.Length; i++)
-            {
-                char[] row = Console.ReadLine().ToCharArray();
-                matrix[i] = new char[n];
-                matrix[i] = row;
-            }
+            ReadMatrix(n);
 
             if (n < 3)
             {
@@ -31,13 +25,20 @@ namespace Knights
 
             while (isEncircling == false)
             {
-
                 LoopWhenIsOverTree();
-
                 ChecksMaxKnightsInDanger();
             }
         }
 
+        public static void ReadMatrix(int n)
+        {
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                char[] row = Console.ReadLine().ToCharArray();
+                matrix[i] = new char[n];
+                matrix[i] = row;
+            }
+        }
         public static int GetKnightsInDanger(int rowIndex, int columnIndex, char[][] matrix, int currentKnightsInDanger)
         {
             //vertical-top left
@@ -132,7 +133,6 @@ namespace Knights
                 isEncircling = true;
             }
         }
-   
         public static void LoopWhenIsOverTree()
         {
             for (int rowIndex = 0; rowIndex < matrix.Length; rowIndex++)

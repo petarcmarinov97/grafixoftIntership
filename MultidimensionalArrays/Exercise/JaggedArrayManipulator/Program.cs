@@ -5,54 +5,35 @@ namespace JaggedArrayManipulator
 {
     public class Program
     {
+        public static int row;
+        public static int column;
+        public static double value;
+        public static double[][] matrix;
+        public static double[][] analyzedMatrix;
+        public static bool isEnd = false;
+        public static string[] commands;
+        public static int numberOfRows;
         static void Main(string[] args)
         {
-            int numberOfRows = int.Parse(Console.ReadLine());
+            numberOfRows = int.Parse(Console.ReadLine());
 
-            double[][] matrix = GetPopulatedMatrix(numberOfRows);
-            double[][] analyzedMatrix = GetAnalyzedMatrix(matrix, numberOfRows);
-            // double [][] analyzedMatrix = GetAnalyzedMatrix(GetPopulatedMatrix(numberOfRows), numberOfRows);
+            matrix = GetPopulatedMatrix(numberOfRows);
+            analyzedMatrix = GetAnalyzedMatrix(matrix, numberOfRows);
 
             string command = Console.ReadLine();
 
-            while (true)
+            do
             {
-                string[] commands = command.Split(" ", System.StringSplitOptions.RemoveEmptyEntries).ToArray();
+                commands = command.Split(" ", System.StringSplitOptions.RemoveEmptyEntries).ToArray();
 
-                int row;
-                int column;
-                double value;
+                ManipulationThrewTheCells();
 
-                if (commands[0].ToLower() == "add")
+                if (isEnd != true)
                 {
-                    row = int.Parse(commands[1]);
-                    column = int.Parse(commands[2]);
-                    value = double.Parse(commands[3]);
-
-                    if (AreCoordinatesValid(analyzedMatrix, row, column))
-                    {
-                        analyzedMatrix[row][column] += value;
-                    }
+                    command = Console.ReadLine();
                 }
-                else if (commands[0].ToLower() == "subtract")
-                {
-                    row = int.Parse(commands[1]);
-                    column = int.Parse(commands[2]);
-                    value = double.Parse(commands[3]);
-
-                    if (AreCoordinatesValid(analyzedMatrix, row, column))
-                    {
-                        analyzedMatrix[row][column] -= value;
-                    }
-                }
-                else if (commands[0].ToLower() == "end")
-                {
-                    PrintFinalMatrix(analyzedMatrix, numberOfRows);
-                    break;
-                }
-
-                command = Console.ReadLine();
             }
+            while (commands[0].ToLower() != "end");
         }
 
         static double[][] GetPopulatedMatrix(int numberOfRows)
@@ -103,6 +84,47 @@ namespace JaggedArrayManipulator
             for (int i = 0; i < numberOfRows; i++)
             {
                 Console.WriteLine(String.Join(" ", analyzedMatrix[i]));
+            }
+        }
+
+        public static void AddValueToTheCurrentCell()
+        {
+            if (AreCoordinatesValid(analyzedMatrix, row, column))
+            {
+                analyzedMatrix[row][column] += value;
+            }
+        }
+
+        public static void SubtractValueFromTheCurrentCell()
+        {
+            if (AreCoordinatesValid(analyzedMatrix, row, column))
+            {
+                analyzedMatrix[row][column] -= value;
+            }
+        }
+    
+        public static void ManipulationThrewTheCells()
+        {
+            switch (commands[0].ToLower())
+            {
+                case "add":
+                    row = int.Parse(commands[1]);
+                    column = int.Parse(commands[2]);
+                    value = double.Parse(commands[3]);
+                    AddValueToTheCurrentCell();
+                    break;
+
+                case "subtract":
+                    row = int.Parse(commands[1]);
+                    column = int.Parse(commands[2]);
+                    value = double.Parse(commands[3]);
+                    SubtractValueFromTheCurrentCell();
+                    break;
+
+                default:
+                    isEnd = true;
+                    PrintFinalMatrix(analyzedMatrix, numberOfRows);
+                    break;
             }
         }
     }
