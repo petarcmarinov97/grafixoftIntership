@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Miner
 {
-    internal class Program
+    public class Program
     {
 
         static char[,] matrix;

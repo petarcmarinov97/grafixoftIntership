@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace JaggedArrayManipulator
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -72,32 +72,33 @@ namespace JaggedArrayManipulator
             return matrix;
         }
 
-        static double[][] GetAnalyzedMatrix(double[][] matrix, int numberOfRows)
+        public static double[][] GetAnalyzedMatrix(double[][] matrix, int numberOfRows)
         {
+            double[][] analyzedMatrix = matrix;
             for (int i = 0; i < numberOfRows - 1; i++)
             {
-                if (matrix[i].Length == matrix[i + 1].Length)
+                if (analyzedMatrix[i].Length == matrix[i + 1].Length)
                 {
-                    matrix[i] = matrix[i].Select(x => x * 2).ToArray();
-                    matrix[i + 1] = matrix[i + 1].Select(x => x * 2).ToArray();
+                    analyzedMatrix[i] = analyzedMatrix[i].Select(x => x * 2).ToArray();
+                    analyzedMatrix[i + 1] = analyzedMatrix[i + 1].Select(x => x * 2).ToArray();
                 }
                 else
                 {
-                    matrix[i] = matrix[i].Select(x => x / 2).ToArray();
-                    matrix[i + 1] = matrix[i + 1].Select(x => x / 2).ToArray();
+                    analyzedMatrix[i] = analyzedMatrix[i].Select(x => x / 2).ToArray();
+                    analyzedMatrix[i + 1] = analyzedMatrix[i + 1].Select(x => x / 2).ToArray();
                 }
             }
 
-            return matrix;
+            return analyzedMatrix;
         }
 
-        private static bool AreCoordinatesValid(double[][] matrix, int row, int column)
+        public static bool AreCoordinatesValid(double[][] matrix, int row, int column)
         {
             return ((row >= 0 && row < matrix.Length) && (column >= 0 && column < matrix[row].Length));
 
         }
 
-        static void PrintFinalMatrix(double[][] analyzedMatrix, int numberOfRows)
+        public static void PrintFinalMatrix(double[][] analyzedMatrix, int numberOfRows)
         {
             for (int i = 0; i < numberOfRows; i++)
             {

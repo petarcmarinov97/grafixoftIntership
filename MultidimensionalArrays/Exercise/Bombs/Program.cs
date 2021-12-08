@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Bombs
 {
-    internal class Program
+    public class Program
     {
         static int[][] matrix;
         static void Main(string[] args)
@@ -60,7 +60,7 @@ namespace Bombs
             }
         }
 
-        private static void BombCell(int rowBomb, int colBomb, int damage) //Checks for valid cell and deal a damage on it
+        public static void BombCell(int rowBomb, int colBomb, int damage) //Checks for valid cell and deal a damage on it
         {
             if (rowBomb >= 0 && rowBomb < matrix.Length &&
                 colBomb >= 0 && colBomb < matrix.Length &&
