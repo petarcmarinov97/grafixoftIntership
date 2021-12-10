@@ -4,40 +4,34 @@ using System.Text;
 
 namespace VehicleCatalog
 {
-    public class Car : Vehicle, IFastVehicles
+    public class Car : Vehicle, IFastVehicle
     {
         private string horsePower;
+
         public Car(string type, string brand, string model, string horsePower) : base(type, brand, model)
         {
             this.HorsePower = horsePower;
         }
-
         public string HorsePower
         {
             get => horsePower;
             set
             {
-                if (IsValidHorses(value))
-                {
-                    horsePower = value;
-                }
-                else
+                if (!HasValidHorsePowers(value))
                 {
                     throw new ArgumentException("Invalid horses power!");
                 }
+
+                horsePower = value;
             }
         }
-
-        protected bool IsValidHorses(string power)
+        protected bool HasValidHorsePowers(string power)
         {
             return int.Parse(power) > 0;
         }
-
-        public override string GetVehicleInfo()
+        public override string ToString()
         {
-            string result = Type + " ---> " + Brand + " - " + Model + " - " + HorsePower + "hp";
-            
-            return result;
+            return base.ToString() + HorsePower + "hp";
         }
     }
 }

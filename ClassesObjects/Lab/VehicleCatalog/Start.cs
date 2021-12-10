@@ -35,17 +35,13 @@ namespace VehicleCatalog
                 input = Console.ReadLine();
             }
             ;
-            //Console.WriteLine("______________________________");
-            //catalog.PrintVehicles();
-            //Console.WriteLine("______________________________");
-            //catalog.PrintVehicles("Truck");
+            Console.WriteLine(catalog.ToString());
             Console.WriteLine("______________________________");
-
             Console.WriteLine("To search a vehicle by type and model type 1 !");
             Console.WriteLine("______________________________");
             Console.WriteLine("To Remove a vehicle type 2 !");
             Console.WriteLine("______________________________");
-            Console.WriteLine("To Sort Cars by a criteria type 3 !");
+            Console.WriteLine("To Sort Vehicles by a criteria type 3 !");
             Console.WriteLine("______________________________");
 
             int answer = int.Parse(Console.ReadLine());
@@ -69,8 +65,9 @@ namespace VehicleCatalog
                 string model = removeData[2];
 
                 catalog.RemoveVehicles(type, brand, model);
+                Console.WriteLine(catalog.ToString());
             }
-            else if(answer == 3)
+            else if (answer == 3)
             {
                 Console.WriteLine("Please enter the criteria which you want to be used:\n   accending or descending");
                 string criteria = Console.ReadLine();

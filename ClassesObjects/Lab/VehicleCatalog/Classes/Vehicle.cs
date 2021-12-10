@@ -23,14 +23,12 @@ namespace VehicleCatalog
             get => brand;
             set
             {
-                if (IsValidBrand(value))
-                {
-                    brand = value;
-                }
-                else
+                if (!HasValidBrand(value))
                 {
                     throw new ArgumentException("Invalid brand name!");
                 }
+
+                brand = value;
             }
         }
         public string Model
@@ -38,25 +36,24 @@ namespace VehicleCatalog
             get => model;
             set
             {
-                if (IsValidModel(value))
-                {
-                    model = value;
-                }
-                else
+                if (!HasValidModel(value))
                 {
                     throw new ArgumentException("Invalid model name!");
                 }
+
+                model = value;
             }
         }
 
-        public string Type {
+        public string Type
+        {
             get => type;
             set
             {
-                type= value;
+                type = value;
             }
         }
-        public bool IsValidBrand(string brand)
+        public bool HasValidBrand(string brand)
         {
             bool isValid = brand.Length >= 2 && brand.Length <= 15;
 
@@ -65,27 +62,32 @@ namespace VehicleCatalog
                 if (!Char.IsLetter(c))
                 {
                     isValid = false;
+                    break;
                 }
             }
 
             return isValid;
         }
 
-        public bool IsValidModel(string model)
+        public bool HasValidModel(string model)
         {
-                bool isValid = model.Length >= 2 && model.Length <= 15;
+            bool isValid = model.Length >= 2 && model.Length <= 15;
 
-                foreach (char c in model)
+            foreach (char c in model)
+            {
+                if (!Char.IsLetterOrDigit(c))
                 {
-                    if (!Char.IsLetterOrDigit(c))
-                    {
-                        isValid = false;
-                    }
+                    isValid = false;
+                    break;
                 }
-
-                return isValid;
             }
 
-        public abstract string GetVehicleInfo();
+            return isValid;
+        }
+
+        public override string ToString()
+        {
+            return Type + " ---> " + Brand + " - " + Model + " - ";
+        }
     }
 }

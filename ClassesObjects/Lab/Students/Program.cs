@@ -15,13 +15,7 @@ namespace Students
             {
                 string[] tokens = input.Split(' ');
 
-                Student student = new Student()
-                {
-                    FirstName = tokens[0],
-                    LastName = tokens[1],
-                    Age = int.Parse(tokens[2]),
-                    HomeTown = tokens[3]
-                };
+                Student student = new Student(tokens[0], tokens[1], int.Parse(tokens[2]), tokens[3]);
                 students.Add(student);
 
                 input = Console.ReadLine();
@@ -30,21 +24,34 @@ namespace Students
             string townToSearch = Console.ReadLine();
 
             List<Student> filteredStudents = students
-                .Where(x => x.HomeTown == townToSearch)
+                .Where(x => x.TownName == townToSearch)
                 .ToList();
 
-            foreach(Student student in filteredStudents)
+            foreach (Student student in filteredStudents)
             {
                 Console.WriteLine($"{student.FirstName} {student.LastName} is {student.Age} years old.");
             }
         }
     }
 
-    class Student
+    public class Student
     {
-        public string FirstName;
-        public string LastName;
-        public int Age;
-        public string HomeTown;
+        private string firstName;
+        private string lastName;
+        private int age;
+        private string homeTown;
+
+        public Student(string firstName, string lastName, int age, string homeTown)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Age = age;
+            this.TownName = homeTown;
+        }
+
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public int Age { get; private set; }
+        public string TownName { get; private set; }
     }
 }

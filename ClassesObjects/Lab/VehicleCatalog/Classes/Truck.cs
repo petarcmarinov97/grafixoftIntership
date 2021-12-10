@@ -18,27 +18,23 @@ namespace VehicleCatalog
             get => weight;
             set
             {
-                if (IsValidWeight(value))
-                {
-                    weight = value;
-                }
-                else
+                if (!HasValidWeight(value))
                 {
                     throw new ArgumentException("Invalid weight !");
                 }
+
+                weight = value;
             }
         }
 
-        protected bool IsValidWeight(string weight)
+        private bool HasValidWeight(string weight)
         {
             return int.Parse(weight) > 0;
         }
 
-        public override string GetVehicleInfo()
+        public override string ToString()
         {
-            string result = Type + " ---> " + Brand + " - " + Model + " - " + Weight + "kg";
-
-            return result;
+            return base.ToString() + Weight + "kg";
         }
     }
 }

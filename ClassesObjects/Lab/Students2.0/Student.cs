@@ -24,14 +24,11 @@ namespace Students2._0
             get => firstName;
             set
             {
-                if (IsValidName(value))
-                {
-                    firstName = value;
-                }
-                else
+                if (!IsValidName(value))
                 {
                     throw new ArgumentException("Invalid first name!");
                 }
+                firstName = value;
             }
         }
         public string LastName
@@ -39,14 +36,11 @@ namespace Students2._0
             get => lastName;
             set
             {
-                if (IsValidName(value))
-                {
-                    lastName = value;
-                }
-                else
+                if (!IsValidName(value))
                 {
                     throw new ArgumentException("Invalid last name!");
                 }
+                lastName = value;
             }
         }
         public int Age
@@ -54,14 +48,11 @@ namespace Students2._0
             get => age;
             set
             {
-                if(value > 0)
-                {
-                    age = value;
-                }
-                else
+                if (value <= 0)
                 {
                     throw new ArgumentException("Invalid age input");
                 }
+                age = value;
             }
         }
         public string TownName
@@ -69,29 +60,26 @@ namespace Students2._0
             get => homeTown;
             set
             {
-                if (IsValidName(value))
-                {
-                    homeTown = value;
-                }
-                else
+                if (!IsValidName(value))
                 {
                     throw new ArgumentException("Invalid home town name!");
                 }
+                homeTown = value;
             }
         }
-        public bool IsValidName(string name)
+        private bool IsValidName(string name)
         {
             bool isValid = name.Length >= 2 && name.Length <= 15;
-
-                foreach (char c in name)
+            foreach (char c in name)
+            {
+                if (!Char.IsLetter(c))
                 {
-                    if (!Char.IsLetter(c))
-                    {
-                        isValid = false;
-                    }
+                    isValid = false;
+                    break;
                 }
+            }
 
-                return isValid;
+            return isValid;
         }
     }
 }

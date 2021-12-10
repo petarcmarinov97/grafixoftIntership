@@ -16,9 +16,9 @@ namespace VehicleCatog.Tests
         [Test]
         public void Test_IsValidTruckInfo()
         {
-            Truck Sut = new Truck("Truck", "Audi", "A3", "5000");
+            Truck sut = new Truck("Truck", "Audi", "A3", "5000");
             string expectedResult = "Truck" + " ---> " + "Audi" + " - " + "A3" + " - " + "5000" + "kg";
-            Assert.AreEqual(Sut.GetVehicleInfo(), expectedResult);
+            Assert.AreEqual(sut.ToString(), expectedResult);
         }
     }
 }

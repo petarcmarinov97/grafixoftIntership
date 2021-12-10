@@ -7,7 +7,7 @@ using System.Linq;
 namespace VehicleCatog.Tests
 {
     [TestFixture]
-    public class Car_Test
+    public class CarTest
     {
         [SetUp]
         public void Setup()
@@ -17,9 +17,9 @@ namespace VehicleCatog.Tests
         [Test]
         public void Test_IsValidCarInfo()
         {
-            Car Sut = new Car("Car", "Audi", "A3", "90");
+            Car sut = new Car("Car", "Audi", "A3", "90");
             string expectedResult = "Car" + " ---> " + "Audi" + " - " + "A3" + " - " + "90" + "hp";
-            Assert.AreEqual(Sut.GetVehicleInfo(), expectedResult);
+            Assert.AreEqual(sut.ToString(), expectedResult);
         }
     }
 }

@@ -8,28 +8,29 @@ namespace VehicleCatalog
     {
         public Vehicle GetVehicle(string typeVehicle, string brand, string model, string options)
         {
-            if(typeVehicle == null)
+            Vehicle result = null;
+
+            if (typeVehicle == null)
             {
-                return null;
+                result = null;
             }
             if (typeVehicle == "Car")
             {
-                Car newCar = new Car(typeVehicle, brand, model, options);
-                return newCar;
+                result = new Car(typeVehicle, brand, model, options);
             }
-            else if(typeVehicle == "Truck")
+            else if (typeVehicle == "Truck")
             {
-                return new Truck(typeVehicle, brand, model, options);
+                result = new Truck(typeVehicle, brand, model, options);
             }
-            else if(typeVehicle == "MotorCycle")
+            else if (typeVehicle == "MotorCycle")
             {
                 Console.WriteLine("Please select a color for your Vehicle!");
                 string color = Console.ReadLine();
 
-                return new MotorCycle(typeVehicle, brand, model, options, color);
+                result = new MotorCycle(typeVehicle, brand, model, options, color);
             }
 
-            return null;
+            return result;
         }
     }
 }

@@ -15,10 +15,10 @@ namespace Students2._0
             {
                 string[] tokens = input.Split(' ');
 
-                int studentIndex = IsExisting(students, tokens[0], tokens[1]);
+                int studentIndex = StudentsCollection.StudentExists(students, tokens[0], tokens[1]);
                 if (studentIndex >= 0)
                 {
-                    Student student = GetStudentById(students, studentIndex);
+                    Student student = StudentsCollection.GetStudentByIndex(students, studentIndex);
                     student.Age = int.Parse(tokens[2]);
                     student.TownName = tokens[3];
                 }
@@ -42,25 +42,5 @@ namespace Students2._0
                 Console.WriteLine($"{student.FirstName} {student.LastName} is {student.Age} years old.");
             }
         }
-
-        static int IsExisting(List<Student> students, string firstName, string lastName)
-        {
-            int indexOfStudent = -1;
-            foreach (Student student in students)
-            {
-                if (student.FirstName == firstName && student.LastName == lastName)
-                {
-                    indexOfStudent = students.IndexOf(student);
-                }
-            }
-
-            return indexOfStudent;
-        }
-
-        static Student GetStudentById(List<Student> students, int index)
-        {
-            return students[index];
-        }
     }
-
 }
